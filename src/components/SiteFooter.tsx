@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const SiteFooter = () => {
   return (
@@ -6,9 +7,7 @@ const SiteFooter = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="font-display text-2xl text-foreground mb-4">
-              MG <span className="text-gradient-neon">BRANDS</span>
-            </h3>
+            <img src={logo} alt="MG Brands Pakistan" className="h-12 mb-4" />
             <p className="text-muted-foreground text-sm max-w-sm">
               Premium streetwear for the bold generation of Pakistan. Quality hoodies, tees, and casual wear delivered nationwide.
             </p>
