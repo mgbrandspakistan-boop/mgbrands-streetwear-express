@@ -1,11 +1,21 @@
-import { X, Plus, Minus, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { X, Plus, Minus, Trash2, CreditCard, ChevronDown, ChevronUp } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
+const paymentMethods = [
+  { id: "bank", label: "Faysal Bank", detail: "3333475000006343" },
+  { id: "easypaisa", label: "Easypaisa", detail: "03701727488" },
+  { id: "jazzcash", label: "JazzCash", detail: "03291497570" },
+  { id: "payoneer", label: "Payoneer", detail: "Muhammad Nabeel Naeem" },
+];
+
 const CartDrawer = () => {
   const { items, isCartOpen, setIsCartOpen, removeItem, updateQuantity, totalPrice } = useCart();
   const navigate = useNavigate();
+  const [showPayment, setShowPayment] = useState(false);
+  const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
 
   return (
     <AnimatePresence>
@@ -58,16 +68,61 @@ const CartDrawer = () => {
                       </div>
                     </div>
                   ))}
+
+                  {/* Payment Method Section */}
+                  {showPayment && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="border border-border rounded-sm overflow-hidden"
+                    >
+                      <div className="p-4 space-y-3">
+                        <div className="flex items-center gap-2 mb-1">
+                          <CreditCard size={16} className="text-primary" />
+                          <p className="text-sm font-semibold text-foreground">Select Payment Method</p>
+                        </div>
+                        <p className="text-xs text-muted-foreground">Account Name: <span className="text-foreground font-medium">Muhammad Nabeel Naeem</span></p>
+
+                        <div className="space-y-2">
+                          {paymentMethods.map((pm) => (
+                            <button
+                              key={pm.id}
+                              onClick={() => setSelectedPayment(pm.id)}
+                              className={`w-full text-left p-3 rounded-sm border transition-all duration-200 ${
+                                selectedPayment === pm.id
+                                  ? "border-primary bg-primary/10"
+                                  : "border-border bg-secondary/30 hover:border-muted-foreground"
+                              }`}
+                            >
+                              <p className="text-sm font-medium text-foreground">{pm.label}</p>
+                              <p className="text-xs text-muted-foreground mt-0.5 font-mono">{pm.detail}</p>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               )}
             </div>
 
             {items.length > 0 && (
-              <div className="p-6 border-t border-border">
-                <div className="flex justify-between mb-4">
+              <div className="p-6 border-t border-border space-y-3">
+                <div className="flex justify-between">
                   <span className="text-foreground font-medium">Total</span>
                   <span className="text-primary font-bold text-lg">PKR {totalPrice.toLocaleString()}</span>
                 </div>
+
+                <button
+                  onClick={() => setShowPayment(!showPayment)}
+                  className="w-full flex items-center justify-center gap-2 border border-border text-foreground py-2.5 rounded-sm text-sm font-medium hover:bg-secondary/50 transition-colors"
+                >
+                  <CreditCard size={16} />
+                  Payment Methods
+                  {showPayment ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                </button>
+
                 <button
                   onClick={() => { setIsCartOpen(false); navigate("/checkout"); }}
                   className="w-full bg-primary text-primary-foreground py-3 font-body font-semibold text-sm uppercase tracking-wider hover:shadow-[0_0_30px_hsl(110_100%_55%/0.4)] transition-all duration-300 rounded-sm"

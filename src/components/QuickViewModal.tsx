@@ -108,13 +108,13 @@ const QuickViewModal = ({ product, open, onClose }: QuickViewModalProps) => {
               <p className="text-sm text-muted-foreground mb-2 font-medium">
                 Color: <span className="text-foreground">{selectedColor || "Select"}</span>
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 {product.colors.map((c) => (
                   <button
                     key={c.name}
                     onClick={() => setSelectedColor(c.name)}
-                    className={`w-8 h-8 rounded-full border-2 transition-all duration-200 ${
-                      selectedColor === c.name ? "border-primary scale-110 ring-2 ring-primary/30" : "border-border hover:border-muted-foreground"
+                    className={`w-10 h-10 rounded-full border-2 transition-all duration-200 ${
+                      selectedColor === c.name ? "border-primary scale-110 ring-2 ring-primary/40" : "border-border hover:border-muted-foreground"
                     }`}
                     style={{ backgroundColor: c.hex }}
                     title={c.name}
