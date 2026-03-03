@@ -51,11 +51,12 @@ const BestSelling = () => {
             </div>
 
             <div className="p-4">
+              <p className="text-xs text-muted-foreground font-mono">{product.productId}</p>
               <h3 className="font-body font-semibold text-sm sm:text-base text-foreground mb-1">{product.name}</h3>
               <div className="flex items-center justify-between">
                 <p className="text-primary font-bold text-lg">PKR {product.price.toLocaleString()}</p>
                 <button
-                  onClick={() => addItem({ id: product.id, name: product.name, price: product.price, image: product.image })}
+                  onClick={() => addItem({ id: product.id, productId: product.productId, name: product.name, price: product.price, image: product.image })}
                   className="bg-secondary hover:bg-primary hover:text-primary-foreground text-secondary-foreground p-2 rounded-sm transition-all duration-300"
                 >
                   <ShoppingBag size={18} />

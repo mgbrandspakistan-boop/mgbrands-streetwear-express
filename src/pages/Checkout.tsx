@@ -23,9 +23,8 @@ const Checkout = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     const orderLines = items.map(
-      (item) => `• ${item.name} × ${item.quantity} = PKR ${(item.price * item.quantity).toLocaleString()}`
+      (item) => `• ${item.productId} — ${item.name} × ${item.quantity} = PKR ${(item.price * item.quantity).toLocaleString()}`
     );
     const message = [
       `🛒 *New Order — MG Brands Pakistan*`,
@@ -45,9 +44,7 @@ const Checkout = () => {
       `*Payment:* ${paymentMethod === "cod" ? "Cash on Delivery" : paymentAccounts[paymentMethod as keyof typeof paymentAccounts].label}`,
     ].join("\n");
 
-    const waUrl = `https://wa.me/923291497570?text=${encodeURIComponent(message)}`;
-    window.open(waUrl, "_blank");
-
+    window.open(`https://wa.me/923271497570?text=${encodeURIComponent(message)}`, "_blank");
     setSubmitted(true);
     clearCart();
   };
@@ -58,12 +55,8 @@ const Checkout = () => {
         <div className="text-center max-w-md">
           <CheckCircle size={64} className="text-primary mx-auto mb-6" />
           <h1 className="font-display text-4xl text-foreground mb-4">Order Placed!</h1>
-          <p className="text-muted-foreground mb-8">
-            Thank you for your order! We'll contact you on WhatsApp to confirm.
-          </p>
-          <button onClick={() => navigate("/")} className="bg-primary text-primary-foreground px-8 py-3 font-body font-semibold text-sm uppercase tracking-wider rounded-sm">
-            Back to Home
-          </button>
+          <p className="text-muted-foreground mb-8">Thank you for your order! We'll contact you on WhatsApp to confirm.</p>
+          <button onClick={() => navigate("/")} className="bg-primary text-primary-foreground px-8 py-3 font-body font-semibold text-sm uppercase tracking-wider rounded-sm">Back to Home</button>
         </div>
       </div>
     );
@@ -95,7 +88,7 @@ const Checkout = () => {
           <h3 className="font-display text-xl text-foreground mb-4">Order Summary</h3>
           {items.map((item) => (
             <div key={item.id} className="flex justify-between text-sm py-2 border-b border-border last:border-0">
-              <span className="text-foreground">{item.name} × {item.quantity}</span>
+              <span className="text-foreground"><span className="text-muted-foreground font-mono text-xs mr-2">{item.productId}</span>{item.name} × {item.quantity}</span>
               <span className="text-muted-foreground">PKR {(item.price * item.quantity).toLocaleString()}</span>
             </div>
           ))}
@@ -115,7 +108,6 @@ const Checkout = () => {
             <CreditCard size={18} className="text-primary" />
             <h3 className="font-display text-xl text-foreground">Payment Method</h3>
           </div>
-
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {([
               { id: "cod", label: "Cash on Delivery" },
@@ -124,22 +116,12 @@ const Checkout = () => {
               { id: "jazzcash", label: "JazzCash" },
               { id: "payoneer", label: "Payoneer" },
             ] as { id: PaymentMethod; label: string }[]).map((pm) => (
-              <button
-                key={pm.id}
-                type="button"
-                onClick={() => setPaymentMethod(pm.id)}
-                className={`p-3 rounded-sm border text-sm font-medium transition-all duration-200 ${
-                  paymentMethod === pm.id
-                    ? "border-primary bg-primary/10 text-foreground"
-                    : "border-border bg-secondary/30 text-muted-foreground hover:border-muted-foreground"
-                }`}
-              >
+              <button key={pm.id} type="button" onClick={() => setPaymentMethod(pm.id)}
+                className={`p-3 rounded-sm border text-sm font-medium transition-all duration-200 ${paymentMethod === pm.id ? "border-primary bg-primary/10 text-foreground" : "border-border bg-secondary/30 text-muted-foreground hover:border-muted-foreground"}`}>
                 {pm.label}
               </button>
             ))}
           </div>
-
-          {/* Show account details immediately when non-COD is selected */}
           {selectedAccount && (
             <div className="mt-4 p-4 border border-primary/30 bg-primary/5 rounded-sm">
               <p className="text-sm text-muted-foreground mb-1">Account Name</p>
@@ -153,20 +135,14 @@ const Checkout = () => {
 
         <form onSubmit={handleSubmit} className="bg-card border border-border rounded-sm p-6 space-y-4">
           <h3 className="font-display text-xl text-foreground mb-2">Delivery Details</h3>
-
           {(["name", "phone", "city", "address"] as const).map((field) => (
             <div key={field}>
               <label className="block text-sm text-muted-foreground mb-1 capitalize">{field === "phone" ? "Phone / WhatsApp" : field}</label>
-              <input
-                required
-                value={form[field]}
-                onChange={(e) => setForm((p) => ({ ...p, [field]: e.target.value }))}
+              <input required value={form[field]} onChange={(e) => setForm((p) => ({ ...p, [field]: e.target.value }))}
                 className="w-full bg-secondary border border-border rounded-sm px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                placeholder={field === "phone" ? "03XX XXXXXXX" : `Enter your ${field}`}
-              />
+                placeholder={field === "phone" ? "03XX XXXXXXX" : `Enter your ${field}`} />
             </div>
           ))}
-
           <button type="submit" className="w-full bg-primary text-primary-foreground py-4 font-body font-semibold text-sm uppercase tracking-wider hover:shadow-[0_0_30px_hsl(110_100%_55%/0.4)] transition-all duration-300 rounded-sm mt-4">
             Place Order
           </button>

@@ -11,6 +11,12 @@ import TShirts from "./pages/TShirts";
 import Sweatshirts from "./pages/Sweatshirts";
 import Jackets from "./pages/Jackets";
 import StreetWearSets from "./pages/StreetWearSets";
+import Shirts from "./pages/Shirts";
+import CustomShirts from "./pages/CustomShirts";
+import CustomTShirtDesigns from "./pages/CustomTShirtDesigns";
+import CustomMugPrint from "./pages/CustomMugPrint";
+import CustomStamps from "./pages/CustomStamps";
+import AllCategories from "./pages/AllCategories";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +36,12 @@ const App = () => (
             <Route path="/sweatshirts" element={<Sweatshirts />} />
             <Route path="/jackets" element={<Jackets />} />
             <Route path="/streetwear-sets" element={<StreetWearSets />} />
+            <Route path="/shirts" element={<Shirts />} />
+            <Route path="/custom-shirts" element={<CustomShirts />} />
+            <Route path="/custom-tshirt-designs" element={<CustomTShirtDesigns />} />
+            <Route path="/custom-mug-print" element={<CustomMugPrint />} />
+            <Route path="/custom-stamps" element={<CustomStamps />} />
+            <Route path="/all-categories" element={<AllCategories />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
