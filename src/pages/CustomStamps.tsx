@@ -4,12 +4,23 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import customStamp1 from "@/assets/custom-stamp-1.jpg";
+import customStamp2 from "@/assets/custom-stamp-2.jpg";
+import customStamp3 from "@/assets/custom-stamp-3.jpg";
+import customStamp4 from "@/assets/custom-stamp-4.jpg";
 
-const stampTypes = ["Round Stamp", "Rectangle Stamp", "Square Stamp", "Oval Stamp"];
+const stampTypes = [
+  { name: "Round Stamp", image: customStamp1 },
+  { name: "Rectangle Stamp", image: customStamp2 },
+  { name: "Oval Stamp", image: customStamp3 },
+  { name: "Square Stamp", image: customStamp4 },
+];
 
 const CustomStamps = () => {
   const [customText, setCustomText] = useState("");
   const [stampType, setStampType] = useState<string | null>(null);
+
+  const selectedStamp = stampTypes.find((s) => s.name === stampType);
 
   const price = 799;
   const whatsAppMsg = encodeURIComponent(
@@ -25,6 +36,19 @@ const CustomStamps = () => {
           <h1 className="font-display text-4xl sm:text-5xl text-foreground text-center mb-4">Custom <span className="text-gradient-neon">Stamps</span></h1>
           <p className="text-muted-foreground text-center mb-10">Create your personalized stamp with custom text and your preferred stamp shape.</p>
 
+          {/* Stamp Gallery */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+            {stampTypes.map((stamp) => (
+              <button key={stamp.name} onClick={() => setStampType(stamp.name)}
+                className={`bg-white border rounded-sm overflow-hidden shadow-sm transition-all ${stampType === stamp.name ? "border-primary ring-2 ring-primary/30" : "border-border hover:border-muted-foreground"}`}>
+                <div className="aspect-square overflow-hidden bg-white">
+                  <img src={stamp.image} alt={stamp.name} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <p className="text-xs text-muted-foreground text-center py-2 font-medium">{stamp.name}</p>
+              </button>
+            ))}
+          </div>
+
           <div className="bg-card border border-border rounded-sm p-6 space-y-5">
             <div>
               <label className="block text-sm text-muted-foreground mb-1 font-medium">Custom Text</label>
@@ -33,22 +57,14 @@ const CustomStamps = () => {
             </div>
 
             <div>
-              <p className="text-sm text-muted-foreground mb-2 font-medium">Stamp Type</p>
-              <div className="grid grid-cols-2 gap-2">
-                {stampTypes.map((t) => (
-                  <button key={t} onClick={() => setStampType(t)}
-                    className={`p-3 rounded-sm border text-sm font-medium transition-all ${stampType === t ? "border-primary bg-primary/10 text-foreground" : "border-border bg-secondary/30 text-muted-foreground hover:border-muted-foreground"}`}>
-                    {t}
-                  </button>
-                ))}
-              </div>
+              <p className="text-sm text-muted-foreground mb-2 font-medium">Selected: <span className="text-foreground">{stampType || "Pick from gallery above"}</span></p>
             </div>
 
             {/* Preview */}
-            {customText && stampType && (
-              <div className="bg-secondary/50 rounded-sm p-6 flex items-center justify-center">
-                <div className={`border-2 border-primary p-4 text-center ${stampType === "Round Stamp" || stampType === "Oval Stamp" ? "rounded-full px-8" : stampType === "Square Stamp" ? "aspect-square flex items-center justify-center w-32" : "rounded-sm px-6"}`}>
-                  <p className="text-foreground font-display text-lg">{customText}</p>
+            {customText && selectedStamp && (
+              <div className="bg-white rounded-sm p-6 flex items-center justify-center border border-border">
+                <div className="relative w-40 h-40">
+                  <img src={selectedStamp.image} alt={stampType || ""} className="w-full h-full object-contain" />
                 </div>
               </div>
             )}

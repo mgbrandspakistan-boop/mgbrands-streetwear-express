@@ -4,20 +4,20 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import productTee1 from "@/assets/product-tee-1.jpg";
-import productTee2 from "@/assets/product-tee-2.jpg";
-import productTee3 from "@/assets/product-tee-3.jpg";
-import productHoodie1 from "@/assets/product-hoodie-1.jpg";
-import productHoodie2 from "@/assets/product-hoodie-2.jpg";
-import productHoodie3 from "@/assets/product-hoodie-3.jpg";
+import customDesign1 from "@/assets/custom-tshirt-design-1.jpg";
+import customDesign2 from "@/assets/custom-tshirt-design-2.jpg";
+import customDesign3 from "@/assets/custom-tshirt-design-3.jpg";
+import customDesign4 from "@/assets/custom-tshirt-design-4.jpg";
+import customDesign5 from "@/assets/custom-tshirt-design-5.jpg";
+import customDesign6 from "@/assets/custom-tshirt-design-6.jpg";
 
 const designs = [
-  { id: 1, name: "Urban Graffiti", image: productTee1, description: "Bold graffiti-style artwork for street culture enthusiasts.", price: 1899 },
-  { id: 2, name: "Midnight Abstract", image: productTee2, description: "Abstract geometric patterns with a dark urban edge.", price: 1999 },
-  { id: 3, name: "Retro Wave", image: productTee3, description: "Retro synthwave-inspired design with vibrant neon tones.", price: 1799 },
-  { id: 4, name: "Street Typography", image: productHoodie1, description: "Custom street-style typography with bold lettering.", price: 1899 },
-  { id: 5, name: "Minimalist Logo", image: productHoodie2, description: "Clean minimalist logo placement for subtle fashion.", price: 1699 },
-  { id: 6, name: "Floral Dark", image: productHoodie3, description: "Dark floral patterns blending nature with urban aesthetics.", price: 1999 },
+  { id: 1, name: "Urban Graffiti", image: customDesign1, description: "Bold graffiti-style artwork for street culture enthusiasts.", price: 1899 },
+  { id: 2, name: "Midnight Abstract", image: customDesign2, description: "Abstract geometric patterns with a dark urban edge.", price: 1999 },
+  { id: 3, name: "Retro Wave", image: customDesign3, description: "Retro synthwave-inspired design with vibrant neon tones.", price: 1799 },
+  { id: 4, name: "Street Typography", image: customDesign4, description: "Custom street-style typography with bold lettering.", price: 1899 },
+  { id: 5, name: "Minimalist Logo", image: customDesign5, description: "Clean minimalist logo placement for subtle fashion.", price: 1699 },
+  { id: 6, name: "Floral Dark", image: customDesign6, description: "Dark floral patterns blending nature with urban aesthetics.", price: 1999 },
 ];
 
 const CustomTShirtDesigns = () => {
@@ -35,7 +35,7 @@ const CustomTShirtDesigns = () => {
               const msg = encodeURIComponent(`Assalamualaikum MG Brands!\nI want to order the "${d.name}" T-Shirt design.\nPrice: PKR ${d.price.toLocaleString()}`);
               return (
                 <div key={d.id} className="bg-card border border-border rounded-sm overflow-hidden card-hover shadow-sm">
-                  <div className="aspect-[3/4] overflow-hidden">
+                  <div className="aspect-[3/4] overflow-hidden bg-white">
                     <img src={d.image} alt={d.name} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="p-4">
