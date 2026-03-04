@@ -8,12 +8,14 @@ import customStamp1 from "@/assets/custom-stamp-1.jpg";
 import customStamp2 from "@/assets/custom-stamp-2.jpg";
 import customStamp3 from "@/assets/custom-stamp-3.jpg";
 import customStamp4 from "@/assets/custom-stamp-4.jpg";
+import customStamp5 from "@/assets/custom-stamp-5.jpg";
 
 const stampTypes = [
   { name: "Round Stamp", image: customStamp1 },
   { name: "Rectangle Stamp", image: customStamp2 },
   { name: "Oval Stamp", image: customStamp3 },
   { name: "Square Stamp", image: customStamp4 },
+  { name: "Pencil Stamp", image: customStamp5 },
 ];
 
 const CustomStamps = () => {
