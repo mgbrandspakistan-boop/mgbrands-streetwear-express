@@ -45,7 +45,7 @@ const QuickViewModal = ({ product, open, onClose }: QuickViewModalProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Image */}
-          <div className="relative aspect-[3/4] md:aspect-auto md:min-h-[500px] overflow-hidden">
+          <div className="relative aspect-[3/4] md:aspect-auto md:min-h-[500px] overflow-hidden bg-white">
             <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
             {product.badge && (
               <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider">
