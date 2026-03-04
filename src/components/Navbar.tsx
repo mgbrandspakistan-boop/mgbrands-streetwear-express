@@ -22,7 +22,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResult, setSearchResult] = useState<Product | null | "not-found">(null);
+  const [searchResults, setSearchResults] = useState<Product[] | "not-found" | null>(null);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -32,15 +32,20 @@ const Navbar = () => {
   }, [searchOpen]);
 
   const handleSearch = () => {
-    const q = searchQuery.trim().toUpperCase();
-    if (!q) { setSearchResult(null); return; }
-    const found = products.find((p) => p.productId.toUpperCase() === q || p.productId.toUpperCase().replace("-", "") === q.replace("-", ""));
-    setSearchResult(found || "not-found");
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) { setSearchResults(null); return; }
+    // Search by product ID (exact) or name (partial, case-insensitive)
+    const results = products.filter((p) => {
+      const idMatch = p.productId.toLowerCase() === q || p.productId.toLowerCase().replace("-", "") === q.replace("-", "");
+      const nameMatch = p.name.toLowerCase().includes(q);
+      return idMatch || nameMatch;
+    });
+    setSearchResults(results.length > 0 ? results : "not-found");
   };
 
   const handleSearchKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") handleSearch();
-    if (e.key === "Escape") { setSearchOpen(false); setSearchQuery(""); setSearchResult(null); }
+    if (e.key === "Escape") { setSearchOpen(false); setSearchQuery(""); setSearchResults(null); }
   };
 
   return (
@@ -60,7 +65,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <button onClick={() => { setSearchOpen(!searchOpen); setSearchQuery(""); setSearchResult(null); }} className="text-gray-200 hover:text-primary transition-colors">
+            <button onClick={() => { setSearchOpen(!searchOpen); setSearchQuery(""); setSearchResults(null); }} className="text-gray-200 hover:text-primary transition-colors">
               <Search size={20} />
             </button>
             <button onClick={() => setIsCartOpen(true)} className="relative text-gray-200 hover:text-primary transition-colors">
@@ -91,29 +96,33 @@ const Navbar = () => {
                   <input
                     ref={searchRef}
                     value={searchQuery}
-                    onChange={(e) => { setSearchQuery(e.target.value); setSearchResult(null); }}
+                    onChange={(e) => { setSearchQuery(e.target.value); setSearchResults(null); }}
                     onKeyDown={handleSearchKeyDown}
-                    placeholder="Search by Product ID (e.g. MG-001)"
+                    placeholder="Search by Product ID or Name (e.g. MG-001 or Black Hoodie)"
                     className="flex-1 bg-secondary border border-border rounded-sm px-4 py-2 text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                   <button onClick={handleSearch} className="bg-primary text-primary-foreground px-4 py-2 rounded-sm text-sm font-semibold">
                     Search
                   </button>
                 </div>
-                {searchResult === "not-found" && (
-                  <p className="text-destructive text-sm mt-2">Product Not Found</p>
+                {searchResults === "not-found" && (
+                  <p className="text-destructive text-sm mt-2">No products found</p>
                 )}
-                {searchResult && searchResult !== "not-found" && (
-                  <button
-                    onClick={() => { setQuickViewProduct(searchResult); setSearchOpen(false); setSearchQuery(""); setSearchResult(null); }}
-                    className="flex items-center gap-3 mt-2 p-2 bg-secondary/50 rounded-sm hover:bg-secondary transition-colors w-full text-left"
-                  >
-                    <img src={searchResult.image} alt={searchResult.name} className="w-12 h-12 object-cover rounded-sm" />
-                    <div>
-                      <p className="text-foreground text-sm font-medium">{searchResult.name}</p>
-                      <p className="text-muted-foreground text-xs">{searchResult.productId} — PKR {searchResult.price.toLocaleString()}</p>
-                    </div>
-                  </button>
+                {searchResults && searchResults !== "not-found" && (
+                  <div className="mt-2 space-y-1 max-h-64 overflow-y-auto">
+                    {searchResults.map((result) => (
+                      <button key={result.id}
+                        onClick={() => { setQuickViewProduct(result); setSearchOpen(false); setSearchQuery(""); setSearchResults(null); }}
+                        className="flex items-center gap-3 p-2 bg-secondary/50 rounded-sm hover:bg-secondary transition-colors w-full text-left"
+                      >
+                        <img src={result.image} alt={result.name} className="w-12 h-12 object-cover rounded-sm bg-white" />
+                        <div>
+                          <p className="text-foreground text-sm font-medium">{result.name}</p>
+                          <p className="text-muted-foreground text-xs">{result.productId} — PKR {result.price.toLocaleString()}</p>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
                 )}
               </div>
             </motion.div>
