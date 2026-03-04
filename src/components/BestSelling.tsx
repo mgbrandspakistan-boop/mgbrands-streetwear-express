@@ -29,9 +29,9 @@ const BestSelling = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="group relative bg-card rounded-sm overflow-hidden card-hover"
+            className="group relative bg-card rounded-sm overflow-hidden card-hover border border-border shadow-sm"
           >
-            <div className="relative aspect-[3/4] overflow-hidden">
+            <div className="relative aspect-[3/4] overflow-hidden border-b border-border">
               <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
               {product.badge && (

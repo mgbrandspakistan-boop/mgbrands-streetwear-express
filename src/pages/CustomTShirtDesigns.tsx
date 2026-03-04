@@ -34,7 +34,7 @@ const CustomTShirtDesigns = () => {
             {designs.map((d) => {
               const msg = encodeURIComponent(`Assalamualaikum MG Brands!\nI want to order the "${d.name}" T-Shirt design.\nPrice: PKR ${d.price.toLocaleString()}`);
               return (
-                <div key={d.id} className="bg-card border border-border rounded-sm overflow-hidden card-hover">
+                <div key={d.id} className="bg-card border border-border rounded-sm overflow-hidden card-hover shadow-sm">
                   <div className="aspect-[3/4] overflow-hidden">
                     <img src={d.image} alt={d.name} className="w-full h-full object-cover" loading="lazy" />
                   </div>
@@ -43,7 +43,7 @@ const CustomTShirtDesigns = () => {
                     <p className="text-muted-foreground text-sm mb-2">{d.description}</p>
                     <p className="text-primary font-bold text-lg mb-3">PKR {d.price.toLocaleString()}</p>
                     <a href={`https://wa.me/923271497570?text=${msg}`} target="_blank" rel="noopener noreferrer"
-                      className="w-full bg-[hsl(142,70%,45%)] hover:bg-[hsl(142,70%,40%)] text-foreground py-2.5 rounded-sm font-body font-semibold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                      className="w-full bg-[hsl(142,70%,45%)] hover:bg-[hsl(142,70%,40%)] text-white py-2.5 rounded-sm font-body font-semibold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
                       <MessageCircle size={16} /> Order Now
                     </a>
                   </div>
