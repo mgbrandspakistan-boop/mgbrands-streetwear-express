@@ -11,8 +11,7 @@ import type { Product } from "@/data/products";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Shirts", href: "/shirts" },
-  { label: "Custom Shirts", href: "/custom-shirts" },
-  { label: "Custom T-Shirt Designs", href: "/custom-tshirt-designs" },
+  { label: "Custom T-Shirts", href: "/custom-tshirt-designs" },
   { label: "Custom Mug Print", href: "/custom-mug-print" },
   { label: "Custom Stamps", href: "/custom-stamps" },
   { label: "All Categories", href: "/all-categories" },

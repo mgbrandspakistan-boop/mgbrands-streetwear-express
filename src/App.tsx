@@ -12,7 +12,6 @@ import Sweatshirts from "./pages/Sweatshirts";
 import Jackets from "./pages/Jackets";
 import StreetWearSets from "./pages/StreetWearSets";
 import Shirts from "./pages/Shirts";
-import CustomShirts from "./pages/CustomShirts";
 import CustomTShirtDesigns from "./pages/CustomTShirtDesigns";
 import CustomMugPrint from "./pages/CustomMugPrint";
 import CustomStamps from "./pages/CustomStamps";
@@ -37,7 +36,7 @@ const App = () => (
             <Route path="/jackets" element={<Jackets />} />
             <Route path="/streetwear-sets" element={<StreetWearSets />} />
             <Route path="/shirts" element={<Shirts />} />
-            <Route path="/custom-shirts" element={<CustomShirts />} />
+            <Route path="/custom-shirts" element={<CustomTShirtDesigns />} />
             <Route path="/custom-tshirt-designs" element={<CustomTShirtDesigns />} />
             <Route path="/custom-mug-print" element={<CustomMugPrint />} />
             <Route path="/custom-stamps" element={<CustomStamps />} />
