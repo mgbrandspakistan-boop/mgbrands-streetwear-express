@@ -123,7 +123,7 @@ const QuickViewModal = ({ product, open, onClose }: QuickViewModalProps) => {
                 <ShoppingBag size={18} /> Add to Cart
               </button>
               <a href={`https://wa.me/923271497570?text=${whatsAppMsg}`} target="_blank" rel="noopener noreferrer"
-                className="bg-[hsl(142,70%,45%)] hover:bg-[hsl(142,70%,40%)] text-foreground px-5 py-3 rounded-sm font-body font-semibold text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2">
+                className="bg-[hsl(142,70%,45%)] hover:bg-[hsl(142,70%,40%)] text-white px-5 py-3 rounded-sm font-body font-semibold text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2">
                 <MessageCircle size={18} /> WhatsApp
               </a>
             </div>

@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 12%;
-    --foreground: 0 0% 97%;
+    --background: 0 0% 96%;
+    --foreground: 0 0% 12%;
 
-    --card: 0 0% 16%;
-    --card-foreground: 0 0% 97%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
 
-    --popover: 0 0% 16%;
-    --popover-foreground: 0 0% 97%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
 
-    --primary: 110 100% 55%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 110 100% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 21%;
-    --secondary-foreground: 0 0% 94%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 18%;
 
-    --muted: 0 0% 24%;
-    --muted-foreground: 0 0% 68%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 110 100% 55%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 110 100% 35%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 28%;
-    --input: 0 0% 28%;
-    --ring: 110 100% 55%;
+    --border: 0 0% 86%;
+    --input: 0 0% 86%;
+    --ring: 110 100% 35%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 14%;
-    --sidebar-foreground: 0 0% 94%;
-    --sidebar-primary: 110 100% 55%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 20%;
-    --sidebar-accent-foreground: 0 0% 94%;
-    --sidebar-border: 0 0% 28%;
-    --sidebar-ring: 110 100% 55%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 18%;
+    --sidebar-primary: 110 100% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 18%;
+    --sidebar-border: 0 0% 86%;
+    --sidebar-ring: 110 100% 35%;
   }
 }
 
@@ -68,11 +68,11 @@
   }
 
   .neon-glow {
-    text-shadow: 0 0 10px hsl(110 100% 55% / 0.5), 0 0 30px hsl(110 100% 55% / 0.3);
+    text-shadow: 0 0 10px hsl(110 100% 35% / 0.4), 0 0 30px hsl(110 100% 35% / 0.2);
   }
 
   .neon-border-glow {
-    box-shadow: 0 0 15px hsl(110 100% 55% / 0.3), inset 0 0 15px hsl(110 100% 55% / 0.1);
+    box-shadow: 0 0 15px hsl(110 100% 35% / 0.2), inset 0 0 15px hsl(110 100% 35% / 0.05);
   }
 
   .card-hover {
@@ -81,13 +81,13 @@
 
   .card-hover:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px hsl(0 0% 0% / 0.5);
+    box-shadow: 0 20px 40px hsl(0 0% 0% / 0.1);
   }
 }
 
 @layer utilities {
   .text-gradient-neon {
-    background: linear-gradient(135deg, hsl(110 100% 55%), hsl(150 100% 55%));
+    background: linear-gradient(135deg, hsl(110 100% 35%), hsl(150 100% 35%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
