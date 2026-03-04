@@ -1,12 +1,77 @@
 import { ShoppingBag, Menu, X, Search } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { products } from "@/data/products";
 import logo from "@/assets/logo.png";
 import QuickViewModal from "@/components/QuickViewModal";
 import type { Product } from "@/data/products";
+
+// Custom category product imports
+import customDesign1 from "@/assets/custom-tshirt-design-1.jpg";
+import customDesign2 from "@/assets/custom-tshirt-design-2.jpg";
+import customDesign3 from "@/assets/custom-tshirt-design-3.jpg";
+import customDesign4 from "@/assets/custom-tshirt-design-4.jpg";
+import customDesign5 from "@/assets/custom-tshirt-design-5.jpg";
+import customDesign6 from "@/assets/custom-tshirt-design-6.jpg";
+import mugClassicWhite from "@/assets/mug-classic-white.jpg";
+import mugBlack from "@/assets/mug-black.jpg";
+import mugMagic from "@/assets/mug-magic.jpg";
+import mugInnerColor from "@/assets/mug-inner-color.jpg";
+import mugTravel from "@/assets/mug-travel.jpg";
+import stampSelfInk from "@/assets/stamp-self-ink.jpg";
+import stampWooden from "@/assets/stamp-wooden.jpg";
+import stampRound from "@/assets/stamp-round.jpg";
+import stampPocket from "@/assets/stamp-pocket.jpg";
+import stampSignature from "@/assets/stamp-signature.jpg";
+
+interface SearchItem {
+  id: string;
+  productId: string;
+  name: string;
+  price: number;
+  image: string;
+  categoryLabel: string;
+  navigateTo?: string; // if set, navigate instead of QuickView
+  product?: Product;   // if set, open QuickView
+}
+
+const categoryLabelMap: Record<string, string> = {
+  hoodies: "Hoodie",
+  tshirts: "T-Shirt",
+  sweatshirts: "Sweatshirt",
+  jackets: "Jacket",
+  "streetwear-sets": "Streetwear Set",
+  shirts: "Shirt",
+  "new-arrivals": "New Arrival",
+};
+
+// Build unified search index
+const customTShirtDesigns: SearchItem[] = [
+  { id: "ct-1", productId: "CT-001", name: "Urban Graffiti Custom T-Shirt", price: 1899, image: customDesign1, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-2", productId: "CT-002", name: "Midnight Abstract Custom T-Shirt", price: 1999, image: customDesign2, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-3", productId: "CT-003", name: "Retro Wave Custom T-Shirt", price: 1799, image: customDesign3, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-4", productId: "CT-004", name: "Nature Skull Custom T-Shirt", price: 2099, image: customDesign4, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-5", productId: "CT-005", name: "Cyber Punk Custom T-Shirt", price: 1999, image: customDesign5, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-6", productId: "CT-006", name: "Japanese Street Custom T-Shirt", price: 1899, image: customDesign6, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+];
+
+const mugItems: SearchItem[] = [
+  { id: "mug-1", productId: "MUG-001", name: "Classic White Mug", price: 799, image: mugClassicWhite, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-2", productId: "MUG-002", name: "Black Mug", price: 899, image: mugBlack, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-3", productId: "MUG-003", name: "Magic Mug (Heat Change)", price: 1299, image: mugMagic, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-4", productId: "MUG-004", name: "Inner Color Mug", price: 999, image: mugInnerColor, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-5", productId: "MUG-005", name: "Travel Mug", price: 1499, image: mugTravel, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+];
+
+const stampItems: SearchItem[] = [
+  { id: "stamp-1", productId: "STP-001", name: "Self Ink Stamp", price: 799, image: stampSelfInk, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-2", productId: "STP-002", name: "Wooden Handle Stamp", price: 699, image: stampWooden, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-3", productId: "STP-003", name: "Round Stamp", price: 899, image: stampRound, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-4", productId: "STP-004", name: "Pocket Stamp", price: 999, image: stampPocket, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-5", productId: "STP-005", name: "Signature Stamp", price: 1099, image: stampSignature, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+];
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -22,10 +87,24 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<Product[] | "not-found" | null>(null);
+  const [searchResults, setSearchResults] = useState<SearchItem[] | "not-found" | null>(null);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+
+  // Build full search index once
+  const allSearchItems = useMemo<SearchItem[]>(() => {
+    const mainProducts: SearchItem[] = products.map((p) => ({
+      id: p.id,
+      productId: p.productId,
+      name: p.name,
+      price: p.price,
+      image: p.image,
+      categoryLabel: categoryLabelMap[p.category] || p.category,
+      product: p,
+    }));
+    return [...mainProducts, ...customTShirtDesigns, ...mugItems, ...stampItems];
+  }, []);
 
   useEffect(() => {
     if (searchOpen && searchRef.current) searchRef.current.focus();
@@ -34,11 +113,13 @@ const Navbar = () => {
   const handleSearch = () => {
     const q = searchQuery.trim().toLowerCase();
     if (!q) { setSearchResults(null); return; }
-    // Search by product ID (exact) or name (partial, case-insensitive)
-    const results = products.filter((p) => {
-      const idMatch = p.productId.toLowerCase() === q || p.productId.toLowerCase().replace("-", "") === q.replace("-", "");
-      const nameMatch = p.name.toLowerCase().includes(q);
-      return idMatch || nameMatch;
+    const results = allSearchItems.filter((item) => {
+      const idNorm = item.productId.toLowerCase().replace(/-/g, "");
+      const qNorm = q.replace(/-/g, "");
+      const idMatch = item.productId.toLowerCase() === q || idNorm === qNorm;
+      const nameMatch = item.name.toLowerCase().includes(q);
+      const catMatch = item.categoryLabel.toLowerCase().includes(q);
+      return idMatch || nameMatch || catMatch;
     });
     setSearchResults(results.length > 0 ? results : "not-found");
   };
@@ -46,6 +127,17 @@ const Navbar = () => {
   const handleSearchKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") handleSearch();
     if (e.key === "Escape") { setSearchOpen(false); setSearchQuery(""); setSearchResults(null); }
+  };
+
+  const handleResultClick = (item: SearchItem) => {
+    setSearchOpen(false);
+    setSearchQuery("");
+    setSearchResults(null);
+    if (item.product) {
+      setQuickViewProduct(item.product);
+    } else if (item.navigateTo) {
+      navigate(item.navigateTo);
+    }
   };
 
   return (
@@ -98,7 +190,7 @@ const Navbar = () => {
                     value={searchQuery}
                     onChange={(e) => { setSearchQuery(e.target.value); setSearchResults(null); }}
                     onKeyDown={handleSearchKeyDown}
-                    placeholder="Search by Product ID or Name (e.g. MG-001 or Black Hoodie)"
+                    placeholder="Search by Product ID or Name (e.g. MG-001, Mug, Stamp, Hoodie)"
                     className="flex-1 bg-secondary border border-border rounded-sm px-4 py-2 text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                   <button onClick={handleSearch} className="bg-primary text-primary-foreground px-4 py-2 rounded-sm text-sm font-semibold">
@@ -112,13 +204,16 @@ const Navbar = () => {
                   <div className="mt-2 space-y-1 max-h-64 overflow-y-auto">
                     {searchResults.map((result) => (
                       <button key={result.id}
-                        onClick={() => { setQuickViewProduct(result); setSearchOpen(false); setSearchQuery(""); setSearchResults(null); }}
+                        onClick={() => handleResultClick(result)}
                         className="flex items-center gap-3 p-2 bg-secondary/50 rounded-sm hover:bg-secondary transition-colors w-full text-left"
                       >
                         <img src={result.image} alt={result.name} className="w-12 h-12 object-cover rounded-sm bg-white" />
-                        <div>
-                          <p className="text-foreground text-sm font-medium">{result.name}</p>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-foreground text-sm font-medium truncate">{result.name}</p>
                           <p className="text-muted-foreground text-xs">{result.productId} — PKR {result.price.toLocaleString()}</p>
+                          <span className="inline-block mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary bg-primary/10 px-1.5 py-0.5 rounded">
+                            {result.categoryLabel}
+                          </span>
                         </div>
                       </button>
                     ))}
