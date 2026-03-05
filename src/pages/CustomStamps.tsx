@@ -13,13 +13,13 @@ import stampPen from "@/assets/stamp-pen.jpg";
 import stampShinyPen from "@/assets/stamp-shiny-pen.jpg";
 
 const stampTypes = [
-  { id: "self-ink", name: "Self Ink Stamp", image: stampSelfInk, price: 799 },
-  { id: "wooden", name: "Wooden Handle Stamp", image: stampWooden, price: 699 },
-  { id: "pocket", name: "Pocket Stamp", image: stampPocket, price: 899 },
-  { id: "round", name: "Round Stamp", image: stampRound, price: 749 },
-  { id: "signature", name: "Signature Stamp", image: stampSignature, price: 999 },
-  { id: "pen-stamp", name: "Pen Stamp", image: stampPen, price: 1199 },
-  { id: "shiny-pen-stamp", name: "Shiny Pen Stamp", image: stampShinyPen, price: 1099 },
+  { id: "self-ink", productId: "MG-054", name: "Self Ink Stamp", image: stampSelfInk, price: 799 },
+  { id: "wooden", productId: "MG-055", name: "Wooden Handle Stamp", image: stampWooden, price: 699 },
+  { id: "pocket", productId: "MG-057", name: "Pocket Stamp", image: stampPocket, price: 899 },
+  { id: "round", productId: "MG-056", name: "Round Stamp", image: stampRound, price: 749 },
+  { id: "signature", productId: "MG-058", name: "Signature Stamp", image: stampSignature, price: 999 },
+  { id: "pen-stamp", productId: "MG-059", name: "Pen Stamp", image: stampPen, price: 1199 },
+  { id: "shiny-pen-stamp", productId: "MG-060", name: "Shiny Pen Stamp", image: stampShinyPen, price: 1099 },
 ];
 
 const stampSizes = [
@@ -57,7 +57,7 @@ const CustomStamps = () => {
   };
 
   const whatsAppMsg = encodeURIComponent(
-    `Assalamualaikum MG Brands!\nI want a Custom Stamp:\n• Type: ${selectedStamp.name}\n• Size: ${selectedSize || "Not selected"}\n• Ink Color: ${selectedColor || "Default"}\n• Custom Text: ${customText || "Not specified"}\n• Design: ${fileName || "Will share on chat"}\n• Price: PKR ${selectedStamp.price.toLocaleString()}`
+    `Assalamualaikum MG Brands!\nI want a Custom Stamp:\n• Product ID: ${selectedStamp.productId}\n• Type: ${selectedStamp.name}\n• Size: ${selectedSize || "Not selected"}\n• Ink Color: ${selectedColor || "Default"}\n• Custom Text: ${customText || "Not specified"}\n• Design: ${fileName || "Will share on chat"}\n• Price: PKR ${selectedStamp.price.toLocaleString()}`
   );
 
   return (
@@ -88,6 +88,7 @@ const CustomStamps = () => {
                     </div>
                   )}
                   <div className="p-2">
+                    <p className="text-[10px] text-muted-foreground font-mono text-center">{stamp.productId}</p>
                     <p className="text-xs font-medium text-foreground text-center leading-tight">{stamp.name}</p>
                     <p className="text-xs text-primary font-bold text-center mt-1">PKR {stamp.price.toLocaleString()}</p>
                   </div>
@@ -190,7 +191,7 @@ const CustomStamps = () => {
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="text-muted-foreground text-sm">Selected: {selectedStamp.name}</p>
-                      <p className="text-muted-foreground text-xs">Size: {selectedSize || "—"} · Ink: {selectedColor || "Default"}</p>
+                      <p className="text-muted-foreground text-xs">ID: {selectedStamp.productId} · Size: {selectedSize || "—"} · Ink: {selectedColor || "Default"}</p>
                     </div>
                     <p className="text-primary font-bold text-2xl">PKR {selectedStamp.price.toLocaleString()}</p>
                   </div>

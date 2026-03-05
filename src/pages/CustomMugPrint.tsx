@@ -11,11 +11,11 @@ import mugInnerColor from "@/assets/mug-inner-color.jpg";
 import mugTravel from "@/assets/mug-travel.jpg";
 
 const mugTypes = [
-  { id: "classic-white", name: "Classic White Mug", image: mugClassicWhite, price: 799 },
-  { id: "black", name: "Black Mug", image: mugBlack, price: 899 },
-  { id: "magic", name: "Magic Mug (Heat Change)", image: mugMagic, price: 1299 },
-  { id: "inner-color", name: "Inner Color Mug", image: mugInnerColor, price: 999 },
-  { id: "travel", name: "Travel Mug", image: mugTravel, price: 1499 },
+  { id: "classic-white", productId: "MG-049", name: "Classic White Mug", image: mugClassicWhite, price: 799 },
+  { id: "black", productId: "MG-050", name: "Black Mug", image: mugBlack, price: 899 },
+  { id: "magic", productId: "MG-051", name: "Magic Mug (Heat Change)", image: mugMagic, price: 1299 },
+  { id: "inner-color", productId: "MG-052", name: "Inner Color Mug", image: mugInnerColor, price: 999 },
+  { id: "travel", productId: "MG-053", name: "Travel Mug", image: mugTravel, price: 1499 },
 ];
 
 const mugColors = [
@@ -48,7 +48,7 @@ const CustomMugPrint = () => {
   };
 
   const whatsAppMsg = encodeURIComponent(
-    `Assalamualaikum MG Brands!\nI want a Custom Mug:\n• Mug Type: ${selectedMug.name}\n• Color: ${selectedColor || "Default"}\n• Name on Mug: ${name || "Not specified"}\n• Message: ${message || "None"}\n• Design: ${fileName || "Will share on chat"}\n• Price: PKR ${selectedMug.price.toLocaleString()}`
+    `Assalamualaikum MG Brands!\nI want a Custom Mug:\n• Product ID: ${selectedMug.productId}\n• Mug Type: ${selectedMug.name}\n• Color: ${selectedColor || "Default"}\n• Name on Mug: ${name || "Not specified"}\n• Message: ${message || "None"}\n• Design: ${fileName || "Will share on chat"}\n• Price: PKR ${selectedMug.price.toLocaleString()}`
   );
 
   return (
@@ -79,6 +79,7 @@ const CustomMugPrint = () => {
                     </div>
                   )}
                   <div className="p-2">
+                    <p className="text-[10px] text-muted-foreground font-mono text-center">{mug.productId}</p>
                     <p className="text-xs font-medium text-foreground text-center leading-tight">{mug.name}</p>
                     <p className="text-xs text-primary font-bold text-center mt-1">PKR {mug.price.toLocaleString()}</p>
                   </div>
@@ -175,7 +176,7 @@ const CustomMugPrint = () => {
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="text-muted-foreground text-sm">Selected: {selectedMug.name}</p>
-                      <p className="text-muted-foreground text-xs">Color: {selectedColor || "Default"}</p>
+                      <p className="text-muted-foreground text-xs">ID: {selectedMug.productId} · Color: {selectedColor || "Default"}</p>
                     </div>
                     <p className="text-primary font-bold text-2xl">PKR {selectedMug.price.toLocaleString()}</p>
                   </div>
