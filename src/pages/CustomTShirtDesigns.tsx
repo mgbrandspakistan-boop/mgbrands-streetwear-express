@@ -13,6 +13,7 @@ import customDesign6 from "@/assets/custom-tshirt-design-6.jpg";
 
 interface Design {
   id: number;
+  productId: string;
   name: string;
   image: string;
   description: string;
@@ -20,12 +21,12 @@ interface Design {
 }
 
 const designs: Design[] = [
-  { id: 1, name: "Urban Graffiti", image: customDesign1, description: "Bold graffiti-style artwork for street culture enthusiasts.", price: 1899 },
-  { id: 2, name: "Midnight Abstract", image: customDesign2, description: "Abstract geometric patterns with a dark urban edge.", price: 1999 },
-  { id: 3, name: "Retro Wave", image: customDesign3, description: "Retro synthwave-inspired design with vibrant neon tones.", price: 1799 },
-  { id: 4, name: "Street Typography", image: customDesign4, description: "Custom street-style typography with bold lettering.", price: 1899 },
-  { id: 5, name: "Minimalist Logo", image: customDesign5, description: "Clean minimalist logo placement for subtle fashion.", price: 1699 },
-  { id: 6, name: "Floral Dark", image: customDesign6, description: "Dark floral patterns blending nature with urban aesthetics.", price: 1999 },
+  { id: 1, productId: "MG-043", name: "Urban Graffiti", image: customDesign1, description: "Bold graffiti-style artwork for street culture enthusiasts.", price: 1899 },
+  { id: 2, productId: "MG-044", name: "Midnight Abstract", image: customDesign2, description: "Abstract geometric patterns with a dark urban edge.", price: 1999 },
+  { id: 3, productId: "MG-045", name: "Retro Wave", image: customDesign3, description: "Retro synthwave-inspired design with vibrant neon tones.", price: 1799 },
+  { id: 4, productId: "MG-046", name: "Street Typography", image: customDesign4, description: "Custom street-style typography with bold lettering.", price: 1899 },
+  { id: 5, productId: "MG-047", name: "Minimalist Logo", image: customDesign5, description: "Clean minimalist logo placement for subtle fashion.", price: 1699 },
+  { id: 6, productId: "MG-048", name: "Floral Dark", image: customDesign6, description: "Dark floral patterns blending nature with urban aesthetics.", price: 1999 },
 ];
 
 const sizes = ["S", "M", "L", "XL", "2XL"];
@@ -150,11 +151,11 @@ const CustomTShirtDesigns = () => {
   );
 
   const getOrderMsg = (design: Design) => encodeURIComponent(
-    `Assalamualaikum MG Brands!\nI want to order the "${design.name}" T-Shirt:\n• Size: ${selectedSize || "Not selected"}\n• Color: ${selectedColor.name}\n• Side: ${side}\n• Qty: ${quantity}\n• Price: PKR ${design.price.toLocaleString()}`
+    `Assalamualaikum MG Brands!\nI want to order the "${design.name}" T-Shirt:\n• Product ID: ${design.productId}\n• Size: ${selectedSize || "Not selected"}\n• Color: ${selectedColor.name}\n• Side: ${side}\n• Qty: ${quantity}\n• Price: PKR ${design.price.toLocaleString()}`
   );
 
   const getCustomizeMsg = (design: Design) => encodeURIComponent(
-    `Assalamualaikum MG Brands!\nI want to customize the "${design.name}" T-Shirt:\n• Size: ${selectedSize || "Not selected"}\n• Color: ${selectedColor.name}\n• Side: ${side}\n• Qty: ${quantity}\n• Custom Upload: ${customUploadName || "Using gallery design"}\n• Custom Text: ${customText || "None"}\n• Price: PKR ${design.price.toLocaleString()}`
+    `Assalamualaikum MG Brands!\nI want to customize the "${design.name}" T-Shirt:\n• Product ID: ${design.productId}\n• Size: ${selectedSize || "Not selected"}\n• Color: ${selectedColor.name}\n• Side: ${side}\n• Qty: ${quantity}\n• Custom Upload: ${customUploadName || "Using gallery design"}\n• Custom Text: ${customText || "None"}\n• Price: PKR ${design.price.toLocaleString()}`
   );
 
   // Active design image for the customize preview
@@ -176,6 +177,7 @@ const CustomTShirtDesigns = () => {
           </div>
           <div className="space-y-5">
             <div>
+              <p className="text-xs text-muted-foreground font-mono">{design.productId}</p>
               <h2 className="font-display text-2xl text-foreground">{design.name}</h2>
               <p className="text-muted-foreground text-sm mt-1">{design.description}</p>
               <p className="text-primary font-bold text-xl mt-2">PKR {design.price.toLocaleString()}</p>
@@ -349,6 +351,7 @@ const CustomTShirtDesigns = () => {
           {/* Right: Options */}
           <div className="space-y-5">
             <div>
+              <p className="text-xs text-muted-foreground font-mono">{design.productId}</p>
               <h2 className="font-display text-2xl text-foreground">{design.name}</h2>
               <p className="text-muted-foreground text-sm mt-1">{design.description}</p>
               <p className="text-primary font-bold text-xl mt-2">PKR {design.price.toLocaleString()}</p>
@@ -506,6 +509,7 @@ const CustomTShirtDesigns = () => {
                     )}
                   </div>
                   <div className="p-4">
+                    <p className="text-xs text-muted-foreground font-mono">{d.productId}</p>
                     <h3 className="font-body font-semibold text-foreground mb-1">{d.name}</h3>
                     <p className="text-muted-foreground text-sm mb-2">{d.description}</p>
                     <p className="text-primary font-bold text-lg">PKR {d.price.toLocaleString()}</p>

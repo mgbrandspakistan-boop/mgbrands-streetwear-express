@@ -11,11 +11,11 @@ import walletMinimal from "@/assets/wallet-minimal.jpg";
 import walletLong from "@/assets/wallet-long.jpg";
 
 const walletTypes = [
-  { id: "leather", name: "Leather Wallet", image: walletLeather, price: 2499 },
-  { id: "card-holder", name: "Card Holder Wallet", image: walletCardHolder, price: 1799 },
-  { id: "zipper", name: "Zipper Wallet", image: walletZipper, price: 2799 },
-  { id: "minimal", name: "Minimal Wallet", image: walletMinimal, price: 1999 },
-  { id: "long", name: "Long Wallet", image: walletLong, price: 3299 },
+  { id: "leather", productId: "MG-061", name: "Leather Wallet", image: walletLeather, price: 2499 },
+  { id: "card-holder", productId: "MG-062", name: "Card Holder Wallet", image: walletCardHolder, price: 1799 },
+  { id: "zipper", productId: "MG-063", name: "Zipper Wallet", image: walletZipper, price: 2799 },
+  { id: "minimal", productId: "MG-064", name: "Minimal Wallet", image: walletMinimal, price: 1999 },
+  { id: "long", productId: "MG-065", name: "Long Wallet", image: walletLong, price: 3299 },
 ];
 
 const walletColors = [
@@ -45,7 +45,7 @@ const CustomWalletDesign = () => {
   };
 
   const whatsAppMsg = encodeURIComponent(
-    `Assalamualaikum MG Brands!\nI want a Custom Wallet:\n• Type: ${selectedWallet.name}\n• Color: ${selectedColor || "Not selected"}\n• Custom Text: ${customText || "Not specified"}\n• Design: ${fileName || "Will share on chat"}\n• Price: PKR ${selectedWallet.price.toLocaleString()}`
+    `Assalamualaikum MG Brands!\nI want a Custom Wallet:\n• Product ID: ${selectedWallet.productId}\n• Type: ${selectedWallet.name}\n• Color: ${selectedColor || "Not selected"}\n• Custom Text: ${customText || "Not specified"}\n• Design: ${fileName || "Will share on chat"}\n• Price: PKR ${selectedWallet.price.toLocaleString()}`
   );
 
   return (
@@ -87,6 +87,7 @@ const CustomWalletDesign = () => {
                     </div>
                   )}
                   <div className="p-2">
+                    <p className="text-[10px] text-muted-foreground font-mono text-center">{wallet.productId}</p>
                     <p className="text-xs font-medium text-foreground text-center leading-tight">{wallet.name}</p>
                     <p className="text-xs text-primary font-bold text-center mt-1">PKR {wallet.price.toLocaleString()}</p>
                   </div>
@@ -230,7 +231,7 @@ const CustomWalletDesign = () => {
                     <div>
                       <p className="text-muted-foreground text-sm">Selected: {selectedWallet.name}</p>
                       <p className="text-muted-foreground text-xs">
-                        Color: {selectedColor || "—"} · Text: {customText || "—"}
+                        ID: {selectedWallet.productId} · Color: {selectedColor || "—"} · Text: {customText || "—"}
                       </p>
                     </div>
                     <p className="text-primary font-bold text-2xl">PKR {selectedWallet.price.toLocaleString()}</p>
