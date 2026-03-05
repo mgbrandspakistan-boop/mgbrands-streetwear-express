@@ -31,7 +31,7 @@ const BestSelling = () => {
             transition={{ delay: i * 0.1 }}
             className="group relative bg-card rounded-sm overflow-hidden card-hover border border-border shadow-sm"
           >
-            <div className="relative aspect-[3/4] overflow-hidden border-b border-border bg-white">
+            <div className="relative aspect-[3/4] overflow-hidden border-b border-border" style={{ backgroundColor: product.bgColor || '#ffffff' }}>
               <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
               {product.badge && (

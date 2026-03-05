@@ -51,30 +51,30 @@ const categoryLabelMap: Record<string, string> = {
 
 // Build unified search index
 const customTShirtDesigns: SearchItem[] = [
-  { id: "ct-1", productId: "CT-001", name: "Urban Graffiti Custom T-Shirt", price: 1899, image: customDesign1, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
-  { id: "ct-2", productId: "CT-002", name: "Midnight Abstract Custom T-Shirt", price: 1999, image: customDesign2, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
-  { id: "ct-3", productId: "CT-003", name: "Retro Wave Custom T-Shirt", price: 1799, image: customDesign3, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
-  { id: "ct-4", productId: "CT-004", name: "Nature Skull Custom T-Shirt", price: 2099, image: customDesign4, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
-  { id: "ct-5", productId: "CT-005", name: "Cyber Punk Custom T-Shirt", price: 1999, image: customDesign5, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
-  { id: "ct-6", productId: "CT-006", name: "Japanese Street Custom T-Shirt", price: 1899, image: customDesign6, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-1", productId: "MG-043", name: "Urban Graffiti Custom T-Shirt", price: 1899, image: customDesign1, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-2", productId: "MG-044", name: "Midnight Abstract Custom T-Shirt", price: 1999, image: customDesign2, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-3", productId: "MG-045", name: "Retro Wave Custom T-Shirt", price: 1799, image: customDesign3, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-4", productId: "MG-046", name: "Nature Skull Custom T-Shirt", price: 2099, image: customDesign4, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-5", productId: "MG-047", name: "Cyber Punk Custom T-Shirt", price: 1999, image: customDesign5, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
+  { id: "ct-6", productId: "MG-048", name: "Japanese Street Custom T-Shirt", price: 1899, image: customDesign6, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
 ];
 
 const mugItems: SearchItem[] = [
-  { id: "mug-1", productId: "MUG-001", name: "Classic White Mug", price: 799, image: mugClassicWhite, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
-  { id: "mug-2", productId: "MUG-002", name: "Black Mug", price: 899, image: mugBlack, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
-  { id: "mug-3", productId: "MUG-003", name: "Magic Mug (Heat Change)", price: 1299, image: mugMagic, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
-  { id: "mug-4", productId: "MUG-004", name: "Inner Color Mug", price: 999, image: mugInnerColor, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
-  { id: "mug-5", productId: "MUG-005", name: "Travel Mug", price: 1499, image: mugTravel, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-1", productId: "MG-049", name: "Classic White Mug", price: 799, image: mugClassicWhite, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-2", productId: "MG-050", name: "Black Mug", price: 899, image: mugBlack, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-3", productId: "MG-051", name: "Magic Mug (Heat Change)", price: 1299, image: mugMagic, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-4", productId: "MG-052", name: "Inner Color Mug", price: 999, image: mugInnerColor, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
+  { id: "mug-5", productId: "MG-053", name: "Travel Mug", price: 1499, image: mugTravel, categoryLabel: "Custom Mug", navigateTo: "/custom-mug-print" },
 ];
 
 const stampItems: SearchItem[] = [
-  { id: "stamp-1", productId: "STP-001", name: "Self Ink Stamp", price: 799, image: stampSelfInk, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
-  { id: "stamp-2", productId: "STP-002", name: "Wooden Handle Stamp", price: 699, image: stampWooden, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
-  { id: "stamp-3", productId: "STP-003", name: "Round Stamp", price: 899, image: stampRound, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
-  { id: "stamp-4", productId: "STP-004", name: "Pocket Stamp", price: 999, image: stampPocket, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
-  { id: "stamp-5", productId: "STP-005", name: "Signature Stamp", price: 1099, image: stampSignature, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
-  { id: "stamp-6", productId: "STP-006", name: "Pen Stamp", price: 1199, image: stampPen, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
-  { id: "stamp-7", productId: "STP-007", name: "Shiny Pen Stamp", price: 1099, image: stampShinyPen, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-1", productId: "MG-054", name: "Self Ink Stamp", price: 799, image: stampSelfInk, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-2", productId: "MG-055", name: "Wooden Handle Stamp", price: 699, image: stampWooden, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-3", productId: "MG-056", name: "Round Stamp", price: 899, image: stampRound, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-4", productId: "MG-057", name: "Pocket Stamp", price: 999, image: stampPocket, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-5", productId: "MG-058", name: "Signature Stamp", price: 1099, image: stampSignature, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-6", productId: "MG-059", name: "Pen Stamp", price: 1199, image: stampPen, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
+  { id: "stamp-7", productId: "MG-060", name: "Shiny Pen Stamp", price: 1099, image: stampShinyPen, categoryLabel: "Custom Stamp", navigateTo: "/custom-stamps" },
 ];
 
 const navLinks = [

@@ -56,6 +56,7 @@ export interface Product {
   description: string;
   rating: number;
   reviews: number;
+  bgColor?: string;
 }
 
 const defaultColors = [
@@ -163,14 +164,14 @@ export const products: Product[] = [
   },
   // ── T-Shirts ──
   {
-    id: "4", productId: "MG-004", name: "Stealth Black Tee", price: 1499, image: productTee1, category: "tshirts",
+    id: "4", productId: "MG-004", name: "Stealth Black Tee", price: 1499, image: productTee1, category: "tshirts", bgColor: "#000000",
     sizes: ["S", "M", "L", "XL"], colors: teeColors,
     material: "100% Combed Cotton — 180 GSM, Stitched in Pakistan",
     description: "Clean minimal tee with a relaxed fit. Pre-shrunk fabric with reinforced collar. Perfect base layer for any streetwear look.",
     rating: 4.6, reviews: 203,
   },
   {
-    id: "5", productId: "MG-005", name: "Urban Graphic Tee", price: 1699, image: productTee2, category: "tshirts", badge: "Best Seller",
+    id: "5", productId: "MG-005", name: "Urban Graphic Tee", price: 1699, image: productTee2, category: "tshirts", badge: "Best Seller", bgColor: "#000000",
     sizes: ["S", "M", "L", "XL"],
     colors: [{ name: "Black", hex: "#222" }, { name: "Off White", hex: "#eee" }, { name: "Grey", hex: "#999" }, { name: "Navy", hex: "#1a1a3e" }, { name: "Rust", hex: "#8b3a1a" }, { name: "Sage", hex: "#6b7a5e" }, { name: "Cream", hex: "#e8d8c0" }],
     material: "100% Ring-Spun Cotton — 200 GSM, DTG Printed in Pakistan",
@@ -178,7 +179,7 @@ export const products: Product[] = [
     rating: 4.9, reviews: 312,
   },
   {
-    id: "6", productId: "MG-006", name: "Olive Street Tee", price: 1599, image: productTee3, category: "tshirts", badge: "New",
+    id: "6", productId: "MG-006", name: "Olive Street Tee", price: 1599, image: productTee3, category: "tshirts", badge: "New", bgColor: "#000000",
     sizes: ["S", "M", "L", "XL"],
     colors: [{ name: "Olive", hex: "#556B2F" }, { name: "Black", hex: "#222" }, { name: "Tan", hex: "#a68a64" }, { name: "Forest Green", hex: "#2a4a2a" }, { name: "Charcoal", hex: "#444" }, { name: "Clay", hex: "#8b6b4a" }, { name: "Stone", hex: "#7a7a6e" }],
     material: "100% Cotton — 190 GSM, Garment Dyed in Pakistan",
