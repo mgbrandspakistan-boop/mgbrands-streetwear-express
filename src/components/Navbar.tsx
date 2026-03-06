@@ -51,6 +51,8 @@ const categoryLabelMap: Record<string, string> = {
   jackets: "Jacket",
   "streetwear-sets": "Streetwear Set",
   shirts: "Shirt",
+  watches: "Watch",
+  shoes: "Shoe",
   "new-arrivals": "New Arrival",
 };
 
@@ -97,6 +99,8 @@ const navLinks = [
   { label: "Custom Mug Print", href: "/custom-mug-print" },
   { label: "Custom Stamps", href: "/custom-stamps" },
   { label: "Custom Wallet", href: "/custom-wallet-design" },
+  { label: "Watches", href: "/watches" },
+  { label: "Shoes", href: "/shoes" },
   { label: "All Categories", href: "/all-categories" },
 ];
 

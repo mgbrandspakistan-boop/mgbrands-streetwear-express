@@ -39,8 +39,18 @@ import productShirt3 from "@/assets/product-shirt-3.jpg";
 import productShirt4 from "@/assets/product-shirt-4.jpg";
 import productShirt5 from "@/assets/product-shirt-5.jpg";
 import productShirt6 from "@/assets/product-shirt-6.jpg";
+import watchClassic from "@/assets/watch-classic.jpg";
+import watchDigital from "@/assets/watch-digital.jpg";
+import watchSmart from "@/assets/watch-smart.jpg";
+import watchLeatherStrap from "@/assets/watch-leather-strap.jpg";
+import watchMetalStrap from "@/assets/watch-metal-strap.jpg";
+import shoeCasual from "@/assets/shoe-casual.jpg";
+import shoeSports from "@/assets/shoe-sports.jpg";
+import shoeSneakers from "@/assets/shoe-sneakers.jpg";
+import shoeFormal from "@/assets/shoe-formal.jpg";
+import shoeRunning from "@/assets/shoe-running.jpg";
 
-export type ProductCategory = "hoodies" | "tshirts" | "sweatshirts" | "jackets" | "streetwear-sets" | "shirts" | "new-arrivals";
+export type ProductCategory = "hoodies" | "tshirts" | "sweatshirts" | "jackets" | "streetwear-sets" | "shirts" | "watches" | "shoes" | "new-arrivals";
 
 export interface Product {
   id: string;
@@ -413,5 +423,77 @@ export const products: Product[] = [
     material: "Cotton Twill — 160 GSM, Stitched in Pakistan",
     description: "Military-inspired utility shirt with dual chest pockets. Durable twill weave with a structured fit. Roll-up sleeve tabs for versatility.",
     rating: 4.6, reviews: 75,
+  },
+  // ── Watches ──
+  {
+    id: "66", productId: "MG-066", name: "Classic Analog Watch", price: 3999, image: watchClassic, category: "watches", badge: "Best Seller",
+    sizes: ["One Size"], colors: [{ name: "Brown Strap", hex: "#8B4513" }, { name: "Black Strap", hex: "#222" }, { name: "Tan Strap", hex: "#D2B48C" }],
+    material: "Stainless Steel Case, Genuine Leather Strap — Japanese Quartz Movement",
+    description: "Minimalist classic analog watch with silver case and white dial. Brown genuine leather strap with precise Japanese quartz movement. Water-resistant up to 30m.",
+    rating: 4.8, reviews: 96,
+  },
+  {
+    id: "67", productId: "MG-067", name: "Digital Sports Watch", price: 2999, image: watchDigital, category: "watches", badge: "New",
+    sizes: ["One Size"], colors: [{ name: "Black", hex: "#222" }, { name: "Grey", hex: "#666" }, { name: "Navy", hex: "#1a1a3e" }],
+    material: "ABS Case, Silicone Strap — Digital LCD Display",
+    description: "Modern digital sports watch with backlit LCD display. Multiple functions including stopwatch, alarm, and date. Durable silicone strap for active lifestyle.",
+    rating: 4.6, reviews: 73,
+  },
+  {
+    id: "68", productId: "MG-068", name: "Smart Style Hybrid Watch", price: 4999, image: watchSmart, category: "watches", badge: "Premium",
+    sizes: ["One Size"], colors: [{ name: "Black", hex: "#222" }, { name: "Silver", hex: "#C0C0C0" }, { name: "Gunmetal", hex: "#3a3a3a" }],
+    material: "Stainless Steel Case, Mesh Metal Strap — Hybrid Smart Movement",
+    description: "Sleek hybrid smart watch with black dial and mesh metal strap. Combines classic aesthetics with modern smart features. Activity tracking and notification alerts.",
+    rating: 4.9, reviews: 58,
+  },
+  {
+    id: "69", productId: "MG-069", name: "Leather Strap Dress Watch", price: 4499, image: watchLeatherStrap, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Dark Brown", hex: "#3e2a1a" }, { name: "Black", hex: "#222" }, { name: "Cognac", hex: "#8B4513" }],
+    material: "Gold-Plated Case, Genuine Leather Strap — Japanese Quartz Movement",
+    description: "Elegant dress watch with gold case and cream dial featuring Roman numerals. Premium dark brown leather strap. Perfect for formal occasions and everyday luxury.",
+    rating: 4.7, reviews: 64,
+  },
+  {
+    id: "70", productId: "MG-070", name: "Metal Strap Chronograph", price: 5499, image: watchMetalStrap, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Gold", hex: "#DAA520" }, { name: "Two-Tone", hex: "#B0B0B0" }],
+    material: "Stainless Steel Case & Bracelet — Chronograph Quartz Movement",
+    description: "Premium chronograph watch with stainless steel bracelet. Three sub-dials for precision timing. Screw-down crown with 50m water resistance.",
+    rating: 4.8, reviews: 82,
+  },
+  // ── Shoes ──
+  {
+    id: "71", productId: "MG-071", name: "Classic Casual Loafers", price: 4999, image: shoeCasual, category: "shoes", badge: "Best Seller",
+    sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Brown", hex: "#8B4513" }, { name: "Black", hex: "#222" }, { name: "Tan", hex: "#D2B48C" }],
+    material: "Genuine Leather Upper, Rubber Sole — Handcrafted in Pakistan",
+    description: "Premium leather casual loafers with cushioned insole. Slip-on design for effortless style. Perfect for smart-casual and everyday wear.",
+    rating: 4.7, reviews: 104,
+  },
+  {
+    id: "72", productId: "MG-072", name: "Sports Athletic Shoes", price: 3999, image: shoeSports, category: "shoes", badge: "New",
+    sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black/Neon", hex: "#222" }, { name: "Grey/Blue", hex: "#666" }, { name: "Navy/White", hex: "#1a1a3e" }],
+    material: "Breathable Mesh Upper, EVA Midsole — Rubber Outsole",
+    description: "High-performance sports shoes with breathable mesh and responsive cushioning. Lightweight EVA midsole for shock absorption. Durable rubber outsole for grip.",
+    rating: 4.8, reviews: 87,
+  },
+  {
+    id: "73", productId: "MG-073", name: "White Minimal Sneakers", price: 3499, image: shoeSneakers, category: "shoes",
+    sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "White", hex: "#f5f5f5" }, { name: "Off White", hex: "#eee" }, { name: "White/Black", hex: "#f5f5f5" }],
+    material: "Premium Leather Upper, Vulcanized Rubber Sole",
+    description: "Clean minimal white sneakers with premium leather construction. Vulcanized rubber sole for durability. Versatile design that pairs with everything.",
+    rating: 4.9, reviews: 156,
+  },
+  {
+    id: "74", productId: "MG-074", name: "Formal Oxford Shoes", price: 5999, image: shoeFormal, category: "shoes", badge: "Premium",
+    sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black", hex: "#222" }, { name: "Dark Brown", hex: "#3e2a1a" }, { name: "Burgundy", hex: "#5c1a2a" }],
+    material: "Polished Genuine Leather, Leather Sole — Handcrafted in Pakistan",
+    description: "Polished black formal Oxford shoes with cap-toe design. Genuine leather sole with rubber heel insert. Blake-stitched construction for elegance and durability.",
+    rating: 4.8, reviews: 68,
+  },
+  {
+    id: "75", productId: "MG-075", name: "Lightweight Running Shoes", price: 3799, image: shoeRunning, category: "shoes",
+    sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Navy/White", hex: "#1a1a3e" }, { name: "Black/Red", hex: "#222" }, { name: "Grey/Orange", hex: "#666" }],
+    material: "Engineered Mesh Upper, Foam Midsole — Rubber Outsole",
+    description: "Ultralight running shoes with engineered mesh for maximum breathability. Responsive foam midsole for energy return. Flex grooves for natural movement.",
+    rating: 4.6, reviews: 93,
   },
 ];

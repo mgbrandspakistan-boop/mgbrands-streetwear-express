@@ -17,6 +17,8 @@ const categoryLabels: { id: ProductCategory | "all"; label: string }[] = [
   { id: "sweatshirts", label: "Sweatshirts" },
   { id: "jackets", label: "Jackets" },
   { id: "streetwear-sets", label: "Streetwear Sets" },
+  { id: "watches", label: "Watches" },
+  { id: "shoes", label: "Shoes" },
 ];
 
 const AllCategories = () => {

@@ -17,6 +17,8 @@ import CustomMugPrint from "./pages/CustomMugPrint";
 import CustomStamps from "./pages/CustomStamps";
 import CustomWalletDesign from "./pages/CustomWalletDesign";
 import AllCategories from "./pages/AllCategories";
+import Watches from "./pages/Watches";
+import Shoes from "./pages/Shoes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +44,8 @@ const App = () => (
             <Route path="/custom-mug-print" element={<CustomMugPrint />} />
             <Route path="/custom-stamps" element={<CustomStamps />} />
             <Route path="/custom-wallet-design" element={<CustomWalletDesign />} />
+            <Route path="/watches" element={<Watches />} />
+            <Route path="/shoes" element={<Shoes />} />
             <Route path="/all-categories" element={<AllCategories />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
