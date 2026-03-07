@@ -49,6 +49,26 @@ import shoeSports from "@/assets/shoe-sports.jpg";
 import shoeSneakers from "@/assets/shoe-sneakers.jpg";
 import shoeFormal from "@/assets/shoe-formal.jpg";
 import shoeRunning from "@/assets/shoe-running.jpg";
+import jokerDesign01 from "@/assets/joker-design-01.jpg";
+import jokerDesign02 from "@/assets/joker-design-02.jpg";
+import jokerDesign03 from "@/assets/joker-design-03.jpg";
+import jokerDesign04 from "@/assets/joker-design-04.jpg";
+import jokerDesign05 from "@/assets/joker-design-05.jpg";
+import jokerDesign06 from "@/assets/joker-design-06.jpg";
+import jokerDesign07 from "@/assets/joker-design-07.jpg";
+import jokerDesign08 from "@/assets/joker-design-08.jpg";
+import jokerDesign09 from "@/assets/joker-design-09.jpg";
+import jokerDesign10 from "@/assets/joker-design-10.jpg";
+import watchRoseGold from "@/assets/watch-rose-gold.jpg";
+import watchTactical from "@/assets/watch-tactical.jpg";
+import watchLuxuryGold from "@/assets/watch-luxury-gold.jpg";
+import watchMinimal from "@/assets/watch-minimal.jpg";
+import watchDiver from "@/assets/watch-diver.jpg";
+import watchSkeleton from "@/assets/watch-skeleton.jpg";
+import watchUltraDigital from "@/assets/watch-ultra-digital.jpg";
+import watchAviator from "@/assets/watch-aviator.jpg";
+import watchTwoTone from "@/assets/watch-two-tone.jpg";
+import watchRacing from "@/assets/watch-racing.jpg";
 
 export type ProductCategory = "hoodies" | "tshirts" | "sweatshirts" | "jackets" | "streetwear-sets" | "shirts" | "watches" | "shoes" | "new-arrivals";
 
@@ -495,5 +515,148 @@ export const products: Product[] = [
     material: "Engineered Mesh Upper, Foam Midsole — Rubber Outsole",
     description: "Ultralight running shoes with engineered mesh for maximum breathability. Responsive foam midsole for energy return. Flex grooves for natural movement.",
     rating: 4.6, reviews: 93,
+  },
+  // ── Joker Design T-Shirts ──
+  {
+    id: "76", productId: "MG-076", name: "Joker Card Master Tee", price: 1899, image: jokerDesign01, category: "tshirts", badge: "New",
+    sizes: ["S", "M", "L", "XL"], colors: teeColors,
+    material: "100% Cotton — 200 GSM, DTG Printed in Pakistan",
+    description: "Mysterious Joker with playing cards design. Premium DTG print on heavyweight cotton. Bold purple and green artwork for streetwear statement.",
+    rating: 4.8, reviews: 42, bgColor: "#ffffff",
+  },
+  {
+    id: "77", productId: "MG-077", name: "Laughing Joker Cartoon Tee", price: 1799, image: jokerDesign02, category: "tshirts",
+    sizes: ["S", "M", "L", "XL"], colors: teeColors,
+    material: "100% Combed Cotton — 190 GSM, Screen Printed in Pakistan",
+    description: "Colorful cartoon-style laughing clown with wild green hair. Vibrant screen print that pops. Oversized fit for maximum streetwear impact.",
+    rating: 4.7, reviews: 56, bgColor: "#ffffff",
+  },
+  {
+    id: "78", productId: "MG-078", name: "Neon Joker Cyberpunk Tee", price: 1999, image: jokerDesign03, category: "tshirts", badge: "Premium",
+    sizes: ["S", "M", "L", "XL"], colors: teeColors,
+    material: "100% Ring-Spun Cotton — 210 GSM, DTG Printed in Pakistan",
+    description: "Cyberpunk neon Joker portrait with glowing purple and green effects. High-definition DTG print. Dark aesthetic meets futuristic streetwear.",
+    rating: 4.9, reviews: 38, bgColor: "#ffffff",
+  },
+  {
+    id: "79", productId: "MG-079", name: "Graffiti Joker Street Tee", price: 1899, image: jokerDesign04, category: "tshirts",
+    sizes: ["S", "M", "L", "XL"], colors: teeColors,
+    material: "100% Cotton — 200 GSM, DTG Printed in Pakistan",
+    description: "Urban graffiti-style Joker with spray paint splatter effects. Bold street art colors. Washed for a vintage feel with oversized boxy fit.",
+    rating: 4.6, reviews: 67, bgColor: "#ffffff",
+  },
+  {
+    id: "80", productId: "MG-080", name: "Minimal Line Art Joker Tee", price: 1699, image: jokerDesign05, category: "tshirts",
+    sizes: ["S", "M", "L", "XL"], colors: teeColors,
+    material: "100% Pima Cotton — 180 GSM, Screen Printed in Pakistan",
+    description: "Elegant minimalist single-line Joker illustration. Clean black ink on premium Pima cotton. Subtle design for understated streetwear style.",
+    rating: 4.5, reviews: 45, bgColor: "#ffffff",
+  },
+  // ── Joker Design Hoodies ──
+  {
+    id: "81", productId: "MG-081", name: "Comic Joker Hoodie", price: 3999, image: jokerDesign06, category: "hoodies", badge: "New",
+    sizes: ["S", "M", "L", "XL"], colors: defaultColors,
+    material: "80% Cotton, 20% Polyester — 350 GSM, DTG Printed in Pakistan",
+    description: "Retro comic-style Joker in red suit with halftone dot background. Premium DTG print on heavyweight fleece hoodie. Kangaroo pocket and adjustable hood.",
+    rating: 4.8, reviews: 34, bgColor: "#ffffff",
+  },
+  {
+    id: "82", productId: "MG-082", name: "Geometric Joker Hoodie", price: 4299, image: jokerDesign07, category: "hoodies",
+    sizes: ["S", "M", "L", "XL"], colors: defaultColors,
+    material: "100% French Terry Cotton — 340 GSM, DTG Printed in Pakistan",
+    description: "Abstract low-poly geometric Joker face in purple and green tones. Modern art meets streetwear. Oversized drop-shoulder silhouette.",
+    rating: 4.7, reviews: 29, bgColor: "#ffffff",
+  },
+  {
+    id: "83", productId: "MG-083", name: "Skull Jester Hoodie", price: 4499, image: jokerDesign08, category: "hoodies", badge: "Premium",
+    sizes: ["S", "M", "L", "XL"], colors: defaultColors,
+    material: "100% Heavy Fleece Cotton — 380 GSM, DTG Printed in Pakistan",
+    description: "Gothic skull-jester fusion with smoke effects. Dark detailed illustration on heavyweight fleece. Double-layered hood for extra warmth.",
+    rating: 4.9, reviews: 51, bgColor: "#ffffff",
+  },
+  {
+    id: "84", productId: "MG-084", name: "Watercolor Joker Hoodie", price: 3899, image: jokerDesign09, category: "hoodies",
+    sizes: ["S", "M", "L", "XL"], colors: defaultColors,
+    material: "80% Cotton, 20% Polyester — 330 GSM, DTG Printed in Pakistan",
+    description: "Artistic watercolor splash Joker with dripping paint effects. Vivid purple, green, and red colorway. Relaxed boxy fit with ribbed cuffs.",
+    rating: 4.6, reviews: 43, bgColor: "#ffffff",
+  },
+  {
+    id: "85", productId: "MG-085", name: "Retro Jester Hoodie", price: 3799, image: jokerDesign10, category: "hoodies",
+    sizes: ["S", "M", "L", "XL"], colors: defaultColors,
+    material: "80% Cotton, 20% Polyester — 320 GSM, Screen Printed in Pakistan",
+    description: "Playful retro cartoon jester with playing cards. Nostalgic colorful design on premium fleece. Classic kangaroo pocket and drawstring hood.",
+    rating: 4.5, reviews: 37, bgColor: "#ffffff",
+  },
+  // ── Additional Watches ──
+  {
+    id: "86", productId: "MG-086", name: "Rose Gold Mesh Watch", price: 4299, image: watchRoseGold, category: "watches", badge: "New",
+    sizes: ["One Size"], colors: [{ name: "Rose Gold", hex: "#B76E79" }, { name: "Gold", hex: "#DAA520" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Rose Gold-Plated Case, Mesh Metal Strap — Japanese Quartz Movement",
+    description: "Elegant rose gold watch with pink dial and mesh strap. Refined feminine design with precise quartz movement. Water-resistant up to 30m.",
+    rating: 4.8, reviews: 72,
+  },
+  {
+    id: "87", productId: "MG-087", name: "Tactical Military Watch", price: 4799, image: watchTactical, category: "watches", badge: "Best Seller",
+    sizes: ["One Size"], colors: [{ name: "Black", hex: "#222" }, { name: "Army Green", hex: "#3a3a1a" }, { name: "Desert Tan", hex: "#C2A878" }],
+    material: "PVD-Coated Steel Case, Rubber Strap — Chronograph Quartz Movement",
+    description: "Rugged military-grade tactical watch with compass bezel. Large luminous dial for low-light reading. Shock-resistant with 100m water resistance.",
+    rating: 4.9, reviews: 94,
+  },
+  {
+    id: "88", productId: "MG-088", name: "Luxury Gold Chronograph", price: 6999, image: watchLuxuryGold, category: "watches", badge: "Premium",
+    sizes: ["One Size"], colors: [{ name: "Gold/Brown", hex: "#DAA520" }, { name: "Gold/Black", hex: "#DAA520" }, { name: "Rose Gold", hex: "#B76E79" }],
+    material: "18K Gold-Plated Case, Genuine Croc Leather Strap — Swiss Quartz Movement",
+    description: "Luxurious gold chronograph with brown dial and matching leather strap. Three sub-dials with date window. Premium croc-embossed leather band.",
+    rating: 4.9, reviews: 48,
+  },
+  {
+    id: "89", productId: "MG-089", name: "Ultra Minimal Watch", price: 3499, image: watchMinimal, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Silver/Black", hex: "#C0C0C0" }, { name: "Gold/Brown", hex: "#DAA520" }, { name: "Black/Black", hex: "#222" }],
+    material: "Slim Stainless Steel Case, Genuine Leather Strap — Japanese Quartz Movement",
+    description: "Ultra-thin minimalist watch with clean white dial. Simple line markers for timeless elegance. Only 6mm thick for ultimate comfort.",
+    rating: 4.7, reviews: 86,
+  },
+  {
+    id: "90", productId: "MG-090", name: "Blue Diver Watch", price: 5299, image: watchDiver, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Blue/Silver", hex: "#1a1a3e" }, { name: "Black/Silver", hex: "#222" }, { name: "Green/Silver", hex: "#1a3a1a" }],
+    material: "Stainless Steel Case & Bracelet — Automatic Movement, 200m Water Resistant",
+    description: "Professional diver watch with blue ceramic bezel. Luminous hands and markers for underwater visibility. Unidirectional rotating bezel with 200m water resistance.",
+    rating: 4.8, reviews: 63,
+  },
+  {
+    id: "91", productId: "MG-091", name: "Skeleton Vintage Watch", price: 5799, image: watchSkeleton, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Gold/Brown", hex: "#DAA520" }, { name: "Silver/Black", hex: "#C0C0C0" }, { name: "Bronze/Tan", hex: "#8B4513" }],
+    material: "Gold-Plated Brass Case, Leather Strap — Mechanical Hand-Wind Movement",
+    description: "Vintage-inspired skeleton watch with exposed gears and Roman numerals. Mechanical hand-wind movement visible through the dial. Artisan craftsmanship.",
+    rating: 4.7, reviews: 41,
+  },
+  {
+    id: "92", productId: "MG-092", name: "Ultra Digital Smartwatch", price: 4499, image: watchUltraDigital, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Black", hex: "#222" }, { name: "Grey", hex: "#666" }, { name: "Navy", hex: "#1a1a3e" }],
+    material: "Aluminum Alloy Case, Silicone Strap — AMOLED Display",
+    description: "Ultra-modern digital smartwatch with AMOLED display. Fitness tracking, heart rate monitor, and notifications. Lightweight with all-day battery life.",
+    rating: 4.6, reviews: 108,
+  },
+  {
+    id: "93", productId: "MG-093", name: "Aviator Pilot Watch", price: 5499, image: watchAviator, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Gold/Brown", hex: "#DAA520" }, { name: "Silver/Black", hex: "#C0C0C0" }, { name: "Rose Gold/Tan", hex: "#B76E79" }],
+    material: "Gold-Plated Steel Case, Genuine Leather Strap — Chronograph Quartz Movement",
+    description: "Classic aviator chronograph inspired by pilot watches. Large readable dial with three sub-dials. Premium leather strap with contrast stitching.",
+    rating: 4.8, reviews: 57,
+  },
+  {
+    id: "94", productId: "MG-094", name: "Two-Tone Jubilee Watch", price: 5999, image: watchTwoTone, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Silver/Gold", hex: "#C0C0C0" }, { name: "Rose Gold/Silver", hex: "#B76E79" }, { name: "Gold/Gold", hex: "#DAA520" }],
+    material: "Two-Tone Stainless Steel Case & Jubilee Bracelet — Automatic Movement",
+    description: "Sophisticated two-tone dress watch with day-date display. Silver and gold jubilee-style bracelet. Sapphire crystal with 50m water resistance.",
+    rating: 4.9, reviews: 52,
+  },
+  {
+    id: "95", productId: "MG-095", name: "Carbon Racing Chronograph", price: 5799, image: watchRacing, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Black/Red", hex: "#222" }, { name: "Black/Yellow", hex: "#222" }, { name: "Black/Blue", hex: "#222" }],
+    material: "Carbon Fiber & Steel Case, Rubber Strap — Chronograph Quartz Movement",
+    description: "Racing-inspired chronograph with carbon fiber dial and tachymeter bezel. Bold red accents on matte black. Motorsport-grade rubber strap.",
+    rating: 4.7, reviews: 65,
   },
 ];
