@@ -69,8 +69,50 @@ import watchUltraDigital from "@/assets/watch-ultra-digital.jpg";
 import watchAviator from "@/assets/watch-aviator.jpg";
 import watchTwoTone from "@/assets/watch-two-tone.jpg";
 import watchRacing from "@/assets/watch-racing.jpg";
+// New shoe images
+import shoeHightopNavy from "@/assets/shoe-hightop-navy.jpg";
+import shoeSlipOnGrey from "@/assets/shoe-slipon-grey.jpg";
+import shoeChunkyPlatform from "@/assets/shoe-chunky-platform.jpg";
+import shoeRetroRunner from "@/assets/shoe-retro-runner.jpg";
+import shoeTrailOlive from "@/assets/shoe-trail-olive.jpg";
+import shoeDerbyTan from "@/assets/shoe-derby-tan.jpg";
+import shoeLowtopWhite from "@/assets/shoe-lowtop-white.jpg";
+import shoeBasketballRed from "@/assets/shoe-basketball-red.jpg";
+import shoeSockBlack from "@/assets/shoe-sock-black.jpg";
+import shoeChelseaBrown from "@/assets/shoe-chelsea-brown.jpg";
+// Locket images
+import locketHeartGold from "@/assets/locket-heart-gold.jpg";
+import locketRoundSilver from "@/assets/locket-round-silver.jpg";
+import locketOvalRosegold from "@/assets/locket-oval-rosegold.jpg";
+import locketCoupleHeart from "@/assets/locket-couple-heart.jpg";
+import locketNameplateSilver from "@/assets/locket-nameplate-silver.jpg";
+import locketVintageGold from "@/assets/locket-vintage-gold.jpg";
+import locketSquareSilver from "@/assets/locket-square-silver.jpg";
+import locketButterflyGold from "@/assets/locket-butterfly-gold.jpg";
+import locketInfinityRosegold from "@/assets/locket-infinity-rosegold.jpg";
+import locketStarSilver from "@/assets/locket-star-silver.jpg";
+import locketTreeGold from "@/assets/locket-tree-gold.jpg";
+import locketCrownGold from "@/assets/locket-crown-gold.jpg";
+import locketMoonSilver from "@/assets/locket-moon-silver.jpg";
+import locketCircleRosegold from "@/assets/locket-circle-rosegold.jpg";
+import locketTeardropGold from "@/assets/locket-teardrop-gold.jpg";
+// Keychain images
+import keychainPhotoRect from "@/assets/keychain-photo-rect.jpg";
+import keychainPhotoHeart from "@/assets/keychain-photo-heart.jpg";
+import keychainLeatherName from "@/assets/keychain-leather-name.jpg";
+import keychainAcrylicRound from "@/assets/keychain-acrylic-round.jpg";
+import keychainInitialSilver from "@/assets/keychain-initial-silver.jpg";
+import keychainCouplePuzzle from "@/assets/keychain-couple-puzzle.jpg";
+import keychainWoodenCustom from "@/assets/keychain-wooden-custom.jpg";
+import keychainCrystalCube from "@/assets/keychain-crystal-cube.jpg";
+import keychainResinFlower from "@/assets/keychain-resin-flower.jpg";
+import keychainDogtagSteel from "@/assets/keychain-dogtag-steel.jpg";
+import keychainCarabiner from "@/assets/keychain-carabiner.jpg";
+import keychainGlobeSilver from "@/assets/keychain-globe-silver.jpg";
+import keychainBottleOpener from "@/assets/keychain-bottle-opener.jpg";
+import keychainCarSilver from "@/assets/keychain-car-silver.jpg";
 
-export type ProductCategory = "hoodies" | "tshirts" | "sweatshirts" | "jackets" | "streetwear-sets" | "shirts" | "watches" | "shoes" | "new-arrivals";
+export type ProductCategory = "hoodies" | "tshirts" | "sweatshirts" | "jackets" | "streetwear-sets" | "shirts" | "watches" | "shoes" | "lockets-keychains" | "new-arrivals";
 
 export interface Product {
   id: string;
@@ -661,70 +703,70 @@ export const products: Product[] = [
   },
   // ── Additional Shoes ──
   {
-    id: "96", productId: "MG-096", name: "Sneakers 01", price: 3699, image: shoeSneakers, category: "shoes",
-    sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "White", hex: "#f5f5f5" }, { name: "Black", hex: "#222" }, { name: "Grey", hex: "#999" }],
+    id: "96", productId: "MG-096", name: "Sneakers 01", price: 3699, image: shoeHightopNavy, category: "shoes",
+    sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Navy", hex: "#1a1a3e" }, { name: "Black", hex: "#222" }, { name: "Grey", hex: "#999" }],
     material: "Premium Canvas Upper, Rubber Sole — Handcrafted",
-    description: "Classic canvas sneakers with cushioned insole and durable rubber outsole. Timeless design for everyday streetwear.",
+    description: "Classic high-top canvas sneakers with cushioned insole and durable rubber outsole. Timeless design for everyday streetwear.",
     rating: 4.6, reviews: 78,
   },
   {
-    id: "97", productId: "MG-097", name: "Sneakers 02", price: 3899, image: shoeCasual, category: "shoes",
+    id: "97", productId: "MG-097", name: "Sneakers 02", price: 3899, image: shoeSlipOnGrey, category: "shoes",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Off White", hex: "#eee" }, { name: "Navy", hex: "#1a1a3e" }, { name: "Olive", hex: "#556B2F" }],
     material: "Suede & Mesh Upper, EVA Midsole — Rubber Outsole",
     description: "Retro-inspired suede sneakers with mesh panels for breathability. Cushioned EVA midsole for all-day comfort.",
     rating: 4.7, reviews: 65,
   },
   {
-    id: "98", productId: "MG-098", name: "Sneakers 03", price: 4199, image: shoeSports, category: "shoes", badge: "New",
+    id: "98", productId: "MG-098", name: "Sneakers 03", price: 4199, image: shoeChunkyPlatform, category: "shoes", badge: "New",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black/White", hex: "#222" }, { name: "Grey/Neon", hex: "#666" }, { name: "Navy/Red", hex: "#1a1a3e" }],
     material: "Knit Upper, Boost Foam Midsole — Continental Rubber Outsole",
     description: "High-performance knit sneakers with responsive foam cushioning. Sock-like fit for ultimate comfort.",
     rating: 4.8, reviews: 92,
   },
   {
-    id: "99", productId: "MG-099", name: "Sneakers 04", price: 3499, image: shoeRunning, category: "shoes",
+    id: "99", productId: "MG-099", name: "Sneakers 04", price: 3499, image: shoeRetroRunner, category: "shoes",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "White/Blue", hex: "#f5f5f5" }, { name: "Black/Red", hex: "#222" }, { name: "Grey/Green", hex: "#999" }],
     material: "Synthetic Leather Upper, Phylon Midsole — Rubber Outsole",
     description: "Clean minimal sneakers with synthetic leather for easy maintenance. Lightweight phylon midsole for cushioning.",
     rating: 4.5, reviews: 54,
   },
   {
-    id: "100", productId: "MG-100", name: "Sneakers 05", price: 4499, image: shoeFormal, category: "shoes", badge: "Premium",
+    id: "100", productId: "MG-100", name: "Sneakers 05", price: 4499, image: shoeTrailOlive, category: "shoes", badge: "Premium",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black", hex: "#222" }, { name: "Brown", hex: "#8B4513" }, { name: "White", hex: "#f5f5f5" }],
     material: "Full Grain Leather Upper, Leather Midsole — Rubber Outsole",
     description: "Luxury leather sneakers with premium full-grain construction. Elevated streetwear meets sophistication.",
     rating: 4.9, reviews: 43,
   },
   {
-    id: "101", productId: "MG-101", name: "Sports Shoes 01", price: 3999, image: shoeSports, category: "shoes",
+    id: "101", productId: "MG-101", name: "Sports Shoes 01", price: 3999, image: shoeDerbyTan, category: "shoes",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black/Neon", hex: "#222" }, { name: "Blue/White", hex: "#1a1a3e" }, { name: "Red/Black", hex: "#8b3a1a" }],
     material: "Breathable Mesh Upper, Gel Cushion Midsole — Rubber Outsole",
     description: "High-energy sports shoes with gel cushioning for impact absorption. Breathable mesh keeps feet cool during workouts.",
     rating: 4.7, reviews: 88,
   },
   {
-    id: "102", productId: "MG-102", name: "Sports Shoes 02", price: 4299, image: shoeRunning, category: "shoes", badge: "New",
+    id: "102", productId: "MG-102", name: "Sports Shoes 02", price: 4299, image: shoeLowtopWhite, category: "shoes", badge: "New",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Grey/Orange", hex: "#666" }, { name: "Black/Yellow", hex: "#222" }, { name: "Navy/Cyan", hex: "#1a1a3e" }],
     material: "Flyknit Upper, React Foam Midsole — Waffle Outsole",
     description: "Engineered flyknit sports shoes with responsive react foam. Flexible waffle outsole for multi-surface traction.",
     rating: 4.8, reviews: 76,
   },
   {
-    id: "103", productId: "MG-103", name: "Sports Shoes 03", price: 3799, image: shoeSneakers, category: "shoes",
+    id: "103", productId: "MG-103", name: "Sports Shoes 03", price: 3799, image: shoeBasketballRed, category: "shoes",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "White/Black", hex: "#f5f5f5" }, { name: "Black/White", hex: "#222" }, { name: "Blue/Grey", hex: "#1a1a3e" }],
     material: "Synthetic Mesh Upper, Air Unit Midsole — Rubber Outsole",
     description: "Air-cushioned sports shoes for maximum shock absorption. Lightweight and supportive for training sessions.",
     rating: 4.6, reviews: 67,
   },
   {
-    id: "104", productId: "MG-104", name: "Sports Shoes 04", price: 4599, image: shoeSports, category: "shoes", badge: "Best Seller",
+    id: "104", productId: "MG-104", name: "Sports Shoes 04", price: 4599, image: shoeSockBlack, category: "shoes", badge: "Best Seller",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black", hex: "#222" }, { name: "Grey", hex: "#666" }, { name: "Navy", hex: "#1a1a3e" }],
     material: "Carbon Fiber Plate, Zoom Foam — Engineered Mesh Upper",
     description: "Race-day performance shoes with carbon fiber plate for energy return. Elite-level construction for competitive athletes.",
     rating: 4.9, reviews: 102,
   },
   {
-    id: "105", productId: "MG-105", name: "Sports Shoes 05", price: 3599, image: shoeCasual, category: "shoes",
+    id: "105", productId: "MG-105", name: "Sports Shoes 05", price: 3599, image: shoeChelseaBrown, category: "shoes",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "White/Green", hex: "#f5f5f5" }, { name: "Black/Blue", hex: "#222" }, { name: "Grey/Red", hex: "#666" }],
     material: "Breathable Textile Upper, Foam Midsole — Flex Groove Outsole",
     description: "Versatile sports shoes with flex groove outsole for natural movement. Lightweight textile upper with reinforced toe.",
@@ -941,4 +983,189 @@ export const products: Product[] = [
     description: "Solar-powered military field watch with tritium lume. NATO strap for rugged durability. Designed for outdoor adventures.",
     rating: 4.7, reviews: 78,
   },
+  // ── Additional Shoes (to reach 40+) ──
+  { id: "136", productId: "MG-136", name: "High Top Canvas 01", price: 3899, image: shoeHightopNavy, category: "shoes", badge: "New",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Navy", hex: "#1a1a3e" }, { name: "Black", hex: "#222" }, { name: "White", hex: "#f5f5f5" }],
+    material: "Premium Canvas Upper, Vulcanized Rubber Sole", description: "Classic high-top canvas sneakers with reinforced toe cap. Vulcanized rubber sole for durability. Iconic streetwear silhouette.", rating: 4.7, reviews: 82 },
+  { id: "137", productId: "MG-137", name: "Slip On Casual 01", price: 3499, image: shoeSlipOnGrey, category: "shoes",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Grey", hex: "#999" }, { name: "Black", hex: "#222" }, { name: "Navy", hex: "#1a1a3e" }],
+    material: "Suede Upper, Memory Foam Insole — Rubber Outsole", description: "Easy slip-on casual shoes with plush memory foam insole. Suede upper for premium look. Perfect for daily wear.", rating: 4.6, reviews: 67 },
+  { id: "138", productId: "MG-138", name: "Platform Chunky 01", price: 4799, image: shoeChunkyPlatform, category: "shoes", badge: "Premium",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Black/White", hex: "#222" }, { name: "All Black", hex: "#111" }, { name: "White/Black", hex: "#f5f5f5" }],
+    material: "Leather Upper, Chunky EVA Platform Sole", description: "Bold chunky platform sneakers with exaggerated sole. Premium leather upper. Statement streetwear piece.", rating: 4.8, reviews: 54 },
+  { id: "139", productId: "MG-139", name: "Retro Heritage Runner", price: 4299, image: shoeRetroRunner, category: "shoes",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Cream/Brown", hex: "#e8d8c0" }, { name: "Grey/Navy", hex: "#999" }, { name: "Green/Tan", hex: "#556B2F" }],
+    material: "Suede & Nylon Upper, EVA Midsole — Gum Rubber Outsole", description: "Heritage-inspired retro runner with suede and nylon combo. Gum rubber outsole for authentic vintage look.", rating: 4.7, reviews: 73 },
+  { id: "140", productId: "MG-140", name: "Trail Adventure 01", price: 4599, image: shoeTrailOlive, category: "shoes", badge: "New",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Olive/Orange", hex: "#556B2F" }, { name: "Black/Neon", hex: "#222" }, { name: "Grey/Red", hex: "#666" }],
+    material: "Reinforced Mesh, Rock Guard Plate — Vibram Megagrip Outsole", description: "Technical trail shoes with Vibram Megagrip outsole. Rock guard plate for protection. Built for off-road adventures.", rating: 4.9, reviews: 48 },
+  { id: "141", productId: "MG-141", name: "Derby Brogue Classic", price: 5799, image: shoeDerbyTan, category: "shoes",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Tan", hex: "#D2B48C" }, { name: "Dark Brown", hex: "#3e2a1a" }, { name: "Oxblood", hex: "#5c1a2a" }],
+    material: "Full Grain Leather, Leather Sole — Blake Stitched", description: "Classic derby brogue with full grain leather and intricate perforation details. Blake-stitched leather sole. Timeless elegance.", rating: 4.8, reviews: 61 },
+  { id: "142", productId: "MG-142", name: "Clean Low Top 01", price: 3999, image: shoeLowtopWhite, category: "shoes",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "White", hex: "#f5f5f5" }, { name: "Off White", hex: "#eee" }, { name: "Light Grey", hex: "#ccc" }],
+    material: "Premium Leather Upper, Cupsole Construction", description: "Minimalist low-top sneakers in premium white leather. Clean cupsole construction. Goes with everything.", rating: 4.9, reviews: 112 },
+  { id: "143", productId: "MG-143", name: "Basketball High 01", price: 4999, image: shoeBasketballRed, category: "shoes", badge: "Best Seller",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Black/Red", hex: "#222" }, { name: "White/Blue", hex: "#f5f5f5" }, { name: "Black/Gold", hex: "#222" }],
+    material: "Synthetic Leather, Zoom Air Cushioning — Herringbone Outsole", description: "High-performance basketball shoes with Zoom Air cushioning. Herringbone traction for court grip. Bold colorway.", rating: 4.8, reviews: 93 },
+  { id: "144", productId: "MG-144", name: "Sock Runner Elite", price: 4499, image: shoeSockBlack, category: "shoes",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Black", hex: "#222" }, { name: "Grey", hex: "#666" }, { name: "Navy", hex: "#1a1a3e" }],
+    material: "Primeknit Sock Upper, Boost Midsole — Stretchweb Outsole", description: "Futuristic sock-style runners with Boost midsole technology. Seamless Primeknit upper for sock-like fit.", rating: 4.7, reviews: 76 },
+  { id: "145", productId: "MG-145", name: "Chelsea Boot Classic", price: 5499, image: shoeChelseaBrown, category: "shoes", badge: "Premium",
+    sizes: ["39","40","41","42","43","44"], colors: [{ name: "Dark Brown", hex: "#3e2a1a" }, { name: "Black", hex: "#222" }, { name: "Tan", hex: "#D2B48C" }],
+    material: "Polished Leather, Elastic Side Panel — Commando Rubber Sole", description: "Classic Chelsea boots in polished leather with elastic side panels. Commando rubber sole for all-weather traction.", rating: 4.9, reviews: 87 },
+  // ── Additional Watches (to reach 40+) ──
+  { id: "146", productId: "MG-146", name: "Ultra Digital Watch 03", price: 4799, image: watchUltraDigital, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Black/Green", hex: "#222" }, { name: "Silver/Blue", hex: "#C0C0C0" }, { name: "Grey/Orange", hex: "#666" }],
+    material: "Sapphire Crystal, Titanium Case — AMOLED Always-On Display", description: "Premium ultra digital watch with sapphire crystal protection. Always-on AMOLED display. Built-in GPS and altimeter.", rating: 4.8, reviews: 56 },
+  { id: "147", productId: "MG-147", name: "Smart Watch 03", price: 5599, image: watchSmart, category: "watches", badge: "New",
+    sizes: ["One Size"], colors: [{ name: "Midnight", hex: "#0d1b3e" }, { name: "Starlight", hex: "#e8d8c0" }, { name: "Graphite", hex: "#3a3a3a" }],
+    material: "Ceramic Case, Milanese Loop Strap — Retina Display", description: "Latest smartwatch with ceramic case and Milanese loop. ECG, SpO2, and crash detection. All-day 18hr battery.", rating: 4.9, reviews: 143 },
+  { id: "148", productId: "MG-148", name: "Luxury Watch 03", price: 8999, image: watchLuxuryGold, category: "watches", badge: "Premium",
+    sizes: ["One Size"], colors: [{ name: "Rose Gold", hex: "#B76E79" }, { name: "Yellow Gold", hex: "#DAA520" }, { name: "White Gold", hex: "#C0C0C0" }],
+    material: "18K Rose Gold Case, Crocodile Strap — Swiss Tourbillon Movement", description: "Ultra-luxury tourbillon watch with 18K rose gold case. Exhibition caseback showing the tourbillon. Masterpiece timepiece.", rating: 5.0, reviews: 19 },
+  { id: "149", productId: "MG-149", name: "Chronograph Watch 03", price: 6299, image: watchMetalStrap, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Silver/Black", hex: "#C0C0C0" }, { name: "Gold/Blue", hex: "#DAA520" }, { name: "Gunmetal", hex: "#3a3a3a" }],
+    material: "316L Steel Case & Bracelet — Meca-Quartz Flyback Chronograph", description: "Professional flyback chronograph with meca-quartz movement. Panda dial with racing-style sub-dials. 100m WR.", rating: 4.8, reviews: 67 },
+  { id: "150", productId: "MG-150", name: "Analog Classic Watch 03", price: 4299, image: watchClassic, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Silver/White", hex: "#C0C0C0" }, { name: "Gold/Cream", hex: "#DAA520" }, { name: "Black/Black", hex: "#222" }],
+    material: "Polished Steel Case, Alligator Strap — Swiss Quartz ETA Movement", description: "Swiss ETA quartz movement in polished steel case. Alligator leather strap with deployment clasp. Dress watch perfection.", rating: 4.7, reviews: 89 },
+  { id: "151", productId: "MG-151", name: "Diver Watch 02", price: 5999, image: watchDiver, category: "watches", badge: "Best Seller",
+    sizes: ["One Size"], colors: [{ name: "Black/Black", hex: "#222" }, { name: "Blue/Steel", hex: "#1a1a3e" }, { name: "Green/Steel", hex: "#1a3a1a" }],
+    material: "316L Steel Case, Ceramic Bezel — NH35 Automatic, 500m WR", description: "Professional saturation diver with 500m water resistance. Helium escape valve and ceramic bezel insert. NH35 automatic.", rating: 4.9, reviews: 42 },
+  { id: "152", productId: "MG-152", name: "Skeleton Watch 02", price: 6499, image: watchSkeleton, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Rose Gold", hex: "#B76E79" }, { name: "Gunmetal", hex: "#3a3a3a" }],
+    material: "Sapphire Crystal Front & Back, Steel Case — Miyota 8N24 Automatic", description: "Open-heart skeleton watch with Miyota automatic movement. Both sides sapphire crystal. Art deco inspired dial.", rating: 4.8, reviews: 38 },
+  { id: "153", productId: "MG-153", name: "Aviator Watch 02", price: 5799, image: watchAviator, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Black/Tan", hex: "#222" }, { name: "Silver/Brown", hex: "#C0C0C0" }, { name: "Blue/Navy", hex: "#1a1a3e" }],
+    material: "Brushed Steel Case, Cordovan Leather Strap — Swiss Quartz", description: "Vintage-inspired aviator with oversized crown and onion-shaped numerals. Cordovan leather strap. Swiss quartz precision.", rating: 4.7, reviews: 51 },
+  { id: "154", productId: "MG-154", name: "Racing Watch 02", price: 5499, image: watchRacing, category: "watches", badge: "New",
+    sizes: ["One Size"], colors: [{ name: "Black/Orange", hex: "#222" }, { name: "Black/Green", hex: "#222" }, { name: "Silver/Red", hex: "#C0C0C0" }],
+    material: "Carbon Fiber Dial, Steel Case — Seiko VK63 Meca-Quartz", description: "Motorsport chronograph with carbon fiber dial and tachymeter. Seiko meca-quartz for satisfying pusher action.", rating: 4.8, reviews: 59 },
+  { id: "155", productId: "MG-155", name: "Minimal Watch 02", price: 3599, image: watchMinimal, category: "watches",
+    sizes: ["One Size"], colors: [{ name: "Sand/Tan", hex: "#C2A878" }, { name: "White/Grey", hex: "#f5f5f5" }, { name: "Black/Black", hex: "#222" }],
+    material: "Slim Steel Case (5mm), Horween Leather Strap — Ronda Movement", description: "Ultra-slim dress watch at just 5mm thick. Horween leather strap ages beautifully. Ronda Swiss movement.", rating: 4.6, reviews: 74 },
+  // ── Lockets & Keychains ──
+  { id: "156", productId: "MG-156", name: "Gold Heart Photo Locket", price: 1999, image: locketHeartGold, category: "lockets-keychains", badge: "Best Seller",
+    sizes: ["One Size"], colors: [{ name: "Gold", hex: "#DAA520" }, { name: "Rose Gold", hex: "#B76E79" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Gold-Plated Stainless Steel, Glass Photo Window", description: "Beautiful heart-shaped photo locket in gold plating. Opens to hold your favorite photo. Comes with delicate chain.", rating: 4.9, reviews: 134, bgColor: "#ffffff" },
+  { id: "157", productId: "MG-157", name: "Silver Round Engraved Locket", price: 1799, image: locketRoundSilver, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Antique Silver", hex: "#888" }, { name: "Gunmetal", hex: "#3a3a3a" }],
+    material: "925 Sterling Silver Plated, Filigree Engraving", description: "Classic round locket with intricate filigree engraving. Sterling silver plating. Opens for photo insert.", rating: 4.8, reviews: 98, bgColor: "#ffffff" },
+  { id: "158", productId: "MG-158", name: "Rose Gold Oval Locket", price: 2299, image: locketOvalRosegold, category: "lockets-keychains", badge: "New",
+    sizes: ["One Size"], colors: [{ name: "Rose Gold", hex: "#B76E79" }, { name: "Gold", hex: "#DAA520" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Rose Gold-Plated Brass, Oval Glass Window", description: "Elegant oval locket in rose gold with glass photo window. Delicate chain included. Perfect gift for loved ones.", rating: 4.7, reviews: 76, bgColor: "#ffffff" },
+  { id: "159", productId: "MG-159", name: "Couple Heart Locket Set", price: 2999, image: locketCoupleHeart, category: "lockets-keychains", badge: "Premium",
+    sizes: ["One Size"], colors: [{ name: "Gold & Silver Set", hex: "#DAA520" }, { name: "Rose Gold Set", hex: "#B76E79" }, { name: "Matching Gold", hex: "#DAA520" }],
+    material: "Gold & Silver Plated Stainless Steel, Rhinestones", description: "Matching couple heart locket set — one gold, one silver. Each holds a photo. Perfect anniversary gift.", rating: 4.9, reviews: 112, bgColor: "#ffffff" },
+  { id: "160", productId: "MG-160", name: "Silver Name Necklace Locket", price: 2499, image: locketNameplateSilver, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Gold", hex: "#DAA520" }, { name: "Rose Gold", hex: "#B76E79" }],
+    material: "Sterling Silver Plated, Custom Script Font", description: "Custom name necklace pendant in elegant script font. Sterling silver plating. Personalized with your name.", rating: 4.8, reviews: 89, bgColor: "#ffffff" },
+  { id: "161", productId: "MG-161", name: "Vintage Gold Filigree Locket", price: 2799, image: locketVintageGold, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Antique Gold", hex: "#B8860B" }, { name: "Gold", hex: "#DAA520" }, { name: "Bronze", hex: "#8B4513" }],
+    material: "Antique Gold-Plated Brass, Detailed Filigree Work", description: "Vintage-inspired locket with ornate filigree pattern. Antique gold finish. Opens to reveal photo compartment.", rating: 4.7, reviews: 67, bgColor: "#ffffff" },
+  { id: "162", productId: "MG-162", name: "Silver Square Photo Locket", price: 1899, image: locketSquareSilver, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Black", hex: "#222" }, { name: "Gunmetal", hex: "#3a3a3a" }],
+    material: "Polished Stainless Steel, Glass Window", description: "Modern geometric square locket in polished silver. Clean minimalist design. Glass window for photo display.", rating: 4.6, reviews: 54, bgColor: "#ffffff" },
+  { id: "163", productId: "MG-163", name: "Gold Butterfly Locket", price: 2599, image: locketButterflyGold, category: "lockets-keychains", badge: "New",
+    sizes: ["One Size"], colors: [{ name: "Gold", hex: "#DAA520" }, { name: "Rose Gold", hex: "#B76E79" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Gold-Plated Brass, CZ Rhinestones", description: "Stunning butterfly-shaped locket with cubic zirconia accents. Gold plating. Opens for photo insert.", rating: 4.8, reviews: 83, bgColor: "#ffffff" },
+  { id: "164", productId: "MG-164", name: "Rose Gold Infinity Couple Locket", price: 2399, image: locketInfinityRosegold, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Rose Gold", hex: "#B76E79" }, { name: "Gold", hex: "#DAA520" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Rose Gold-Plated Stainless Steel", description: "Interlocking infinity symbol couple pendant in rose gold. Symbolizes eternal love. Beautiful gift for partners.", rating: 4.9, reviews: 97, bgColor: "#ffffff" },
+  { id: "165", productId: "MG-165", name: "Silver Star Locket", price: 1699, image: locketStarSilver, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Rose Gold", hex: "#B76E79" }, { name: "Gold", hex: "#DAA520" }],
+    material: "Polished Steel, Star Motif with Studs", description: "Celestial star-themed locket with stud details. Polished steel finish. Opens for cherished photo.", rating: 4.6, reviews: 45, bgColor: "#ffffff" },
+  { id: "166", productId: "MG-166", name: "Gold Tree of Life Locket", price: 2699, image: locketTreeGold, category: "lockets-keychains", badge: "Best Seller",
+    sizes: ["One Size"], colors: [{ name: "Gold", hex: "#DAA520" }, { name: "Rose Gold", hex: "#B76E79" }, { name: "Antique Bronze", hex: "#8B4513" }],
+    material: "Gold-Plated Brass, Tree of Life Overlay", description: "Beautiful tree of life design locket in gold plating. Meaningful nature-inspired jewelry. Photo compartment inside.", rating: 4.9, reviews: 126, bgColor: "#ffffff" },
+  { id: "167", productId: "MG-167", name: "Gold Crown Royal Locket", price: 2899, image: locketCrownGold, category: "lockets-keychains", badge: "Premium",
+    sizes: ["One Size"], colors: [{ name: "Gold", hex: "#DAA520" }, { name: "Rose Gold", hex: "#B76E79" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Gold-Plated Brass, CZ Crown Design", description: "Royal crown-shaped locket with CZ rhinestone accents. Luxurious gold plating. Statement jewelry piece.", rating: 4.8, reviews: 71, bgColor: "#ffffff" },
+  { id: "168", productId: "MG-168", name: "Silver Moon & Stars Locket", price: 1999, image: locketMoonSilver, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Gold", hex: "#DAA520" }, { name: "Gunmetal", hex: "#3a3a3a" }],
+    material: "Sterling Silver Plated, Celestial Motif", description: "Crescent moon and stars locket in silver. Celestial-inspired design. Opens for photo insert.", rating: 4.7, reviews: 58, bgColor: "#ffffff" },
+  { id: "169", productId: "MG-169", name: "Rose Gold Circle Charm Locket", price: 1599, image: locketCircleRosegold, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Rose Gold", hex: "#B76E79" }, { name: "Gold", hex: "#DAA520" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Rose Gold-Plated Steel, Solitaire CZ", description: "Minimalist circle charm pendant with single CZ stone. Delicate rose gold finish. Everyday elegance.", rating: 4.5, reviews: 93, bgColor: "#ffffff" },
+  { id: "170", productId: "MG-170", name: "Gold Teardrop Locket", price: 2199, image: locketTeardropGold, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Gold", hex: "#DAA520" }, { name: "Rose Gold", hex: "#B76E79" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Polished Gold-Plated Brass, Pear Shape", description: "Elegant teardrop-shaped locket in polished gold. Smooth pear design. Opens for photo storage.", rating: 4.7, reviews: 64, bgColor: "#ffffff" },
+  // Keychains
+  { id: "171", productId: "MG-171", name: "Rectangular Photo Keychain", price: 999, image: keychainPhotoRect, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Gold", hex: "#DAA520" }, { name: "Gunmetal", hex: "#3a3a3a" }],
+    material: "Zinc Alloy Frame, Glass Photo Insert", description: "Rectangular photo keychain with glass insert. Holds your favorite photo securely. Premium zinc alloy construction.", rating: 4.6, reviews: 87, bgColor: "#ffffff" },
+  { id: "172", productId: "MG-172", name: "Heart Photo Keychain", price: 1099, image: keychainPhotoHeart, category: "lockets-keychains", badge: "Best Seller",
+    sizes: ["One Size"], colors: [{ name: "Gold", hex: "#DAA520" }, { name: "Silver", hex: "#C0C0C0" }, { name: "Rose Gold", hex: "#B76E79" }],
+    material: "Gold-Plated Zinc Alloy, CZ Border", description: "Heart-shaped photo keychain with rhinestone border. Gold plating for luxury feel. Perfect photo gift.", rating: 4.8, reviews: 134, bgColor: "#ffffff" },
+  { id: "173", productId: "MG-173", name: "Leather Name Keychain", price: 899, image: keychainLeatherName, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Brown", hex: "#8B4513" }, { name: "Black", hex: "#222" }, { name: "Tan", hex: "#D2B48C" }],
+    material: "Genuine Leather, Gold Foil Engraving", description: "Custom name leather keychain with gold foil engraving. Premium genuine leather. Elegant personalized accessory.", rating: 4.7, reviews: 112, bgColor: "#ffffff" },
+  { id: "174", productId: "MG-174", name: "Acrylic Custom Keychain", price: 699, image: keychainAcrylicRound, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Clear", hex: "#f5f5f5" }, { name: "Frosted", hex: "#eee" }, { name: "Tinted", hex: "#ccc" }],
+    material: "Transparent Acrylic, UV Printed", description: "Custom acrylic keychain with UV-printed design. Durable and scratch-resistant. Upload any design or photo.", rating: 4.5, reviews: 76, bgColor: "#ffffff" },
+  { id: "175", productId: "MG-175", name: "Initial Letter Keychain", price: 799, image: keychainInitialSilver, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Gold", hex: "#DAA520" }, { name: "Rose Gold", hex: "#B76E79" }],
+    material: "Stainless Steel, Brushed Finish", description: "Custom initial letter keychain in brushed stainless steel. Choose your letter. Minimalist personalized gift.", rating: 4.6, reviews: 98, bgColor: "#ffffff" },
+  { id: "176", productId: "MG-176", name: "Couple Puzzle Keychain Set", price: 1499, image: keychainCouplePuzzle, category: "lockets-keychains", badge: "New",
+    sizes: ["One Size"], colors: [{ name: "Gold & Silver", hex: "#DAA520" }, { name: "Matching Silver", hex: "#C0C0C0" }, { name: "Rose Gold Set", hex: "#B76E79" }],
+    material: "Stainless Steel, Puzzle Piece Design", description: "Matching couple keychain set — puzzle pieces that fit together. One gold, one silver. Symbol of connection.", rating: 4.9, reviews: 87, bgColor: "#ffffff" },
+  { id: "177", productId: "MG-177", name: "Wooden Engraved Keychain", price: 599, image: keychainWoodenCustom, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Natural Wood", hex: "#DEB887" }, { name: "Dark Walnut", hex: "#5C3317" }, { name: "Cherry", hex: "#8B4513" }],
+    material: "Premium Hardwood, Laser Engraved", description: "Natural wood keychain with custom laser engraving. Eco-friendly and unique. Each piece has natural grain patterns.", rating: 4.5, reviews: 65, bgColor: "#ffffff" },
+  { id: "178", productId: "MG-178", name: "Crystal 3D Photo Keychain", price: 1799, image: keychainCrystalCube, category: "lockets-keychains", badge: "Premium",
+    sizes: ["One Size"], colors: [{ name: "Clear Crystal", hex: "#f5f5f5" }, { name: "Blue Tint", hex: "#5b9bd5" }, { name: "Pink Tint", hex: "#ec4899" }],
+    material: "K9 Crystal Glass, 3D Laser Engraving", description: "Premium crystal cube keychain with 3D laser-engraved photo inside. Stunning light-catching effect. Luxury photo gift.", rating: 4.9, reviews: 73, bgColor: "#ffffff" },
+  { id: "179", productId: "MG-179", name: "Resin Flower Keychain", price: 1299, image: keychainResinFlower, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Mixed Flowers", hex: "#ec4899" }, { name: "Blue Flowers", hex: "#2563eb" }, { name: "Purple Flowers", hex: "#7c3aed" }],
+    material: "Clear Epoxy Resin, Real Dried Flowers", description: "Handmade resin keychain with real dried flowers preserved inside. Each piece is unique. Beautiful botanical art.", rating: 4.8, reviews: 91, bgColor: "#ffffff" },
+  { id: "180", productId: "MG-180", name: "Steel Dog Tag Keychain", price: 899, image: keychainDogtagSteel, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Brushed Steel", hex: "#C0C0C0" }, { name: "Black", hex: "#222" }, { name: "Gold", hex: "#DAA520" }],
+    material: "316L Stainless Steel, Ball Chain", description: "Military-style dog tag keychain in brushed stainless steel. Custom text engraving available. Comes with ball chain.", rating: 4.6, reviews: 54, bgColor: "#ffffff" },
+  { id: "181", productId: "MG-181", name: "Carabiner Compass Keychain", price: 1199, image: keychainCarabiner, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Gunmetal", hex: "#3a3a3a" }, { name: "Silver", hex: "#C0C0C0" }, { name: "Black", hex: "#222" }],
+    material: "Zinc Alloy, Built-in Compass", description: "Multifunctional carabiner keychain with built-in compass. Rugged gunmetal finish. Perfect for outdoor enthusiasts.", rating: 4.7, reviews: 62, bgColor: "#ffffff" },
+  { id: "182", productId: "MG-182", name: "Globe Spinner Keychain", price: 999, image: keychainGlobeSilver, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Gold", hex: "#DAA520" }, { name: "Copper", hex: "#B87333" }],
+    material: "Zinc Alloy, Rotating Globe Design", description: "Miniature spinning globe keychain in polished silver. Globe actually rotates. Perfect gift for travelers.", rating: 4.8, reviews: 78, bgColor: "#ffffff" },
+  { id: "183", productId: "MG-183", name: "Bottle Opener Keychain", price: 799, image: keychainBottleOpener, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Black", hex: "#222" }, { name: "Gold", hex: "#DAA520" }],
+    material: "Stainless Steel, Compact Design", description: "Functional bottle opener keychain in compact stainless steel design. Always handy when you need it.", rating: 4.5, reviews: 43, bgColor: "#ffffff" },
+  { id: "184", productId: "MG-184", name: "Sports Car Keychain", price: 1099, image: keychainCarSilver, category: "lockets-keychains", badge: "New",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Black", hex: "#222" }, { name: "Red", hex: "#dc2626" }],
+    material: "Die-Cast Metal, Chrome Plated", description: "Detailed miniature sports car keychain in chrome-plated die-cast metal. Car enthusiast must-have. Premium quality.", rating: 4.7, reviews: 56, bgColor: "#ffffff" },
+  // More locket variants
+  { id: "185", productId: "MG-185", name: "Photo Locket Heart Mini", price: 1599, image: locketHeartGold, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Rose Gold", hex: "#B76E79" }, { name: "Gold", hex: "#DAA520" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Rose Gold-Plated, Mini Heart Design", description: "Petite mini heart locket in rose gold. Dainty and elegant. Perfect for everyday wear with photo insert.", rating: 4.6, reviews: 67, bgColor: "#ffffff" },
+  { id: "186", productId: "MG-186", name: "Double Photo Locket Round", price: 2499, image: locketRoundSilver, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Gold", hex: "#DAA520" }, { name: "Antique Bronze", hex: "#8B4513" }],
+    material: "Sterling Silver, Double Photo Compartment", description: "Round locket with double photo compartments — hold two photos. Sterling silver with engraved design.", rating: 4.8, reviews: 54, bgColor: "#ffffff" },
+  { id: "187", productId: "MG-187", name: "Couple Name Keychain Set", price: 1699, image: keychainLeatherName, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Brown Pair", hex: "#8B4513" }, { name: "Black Pair", hex: "#222" }, { name: "Mixed", hex: "#D2B48C" }],
+    material: "Genuine Leather, Custom Name Engraving", description: "Matching couple name keychains in genuine leather. Each customized with a name. Perfect couple accessory.", rating: 4.7, reviews: 83, bgColor: "#ffffff" },
+  { id: "188", productId: "MG-188", name: "Photo Oval Rosegold Locket", price: 2099, image: locketOvalRosegold, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Rose Gold", hex: "#B76E79" }, { name: "Gold", hex: "#DAA520" }, { name: "Platinum", hex: "#C0C0C0" }],
+    material: "Rose Gold-Plated Brass, Oval Frame", description: "Classic oval photo locket in elegant rose gold. Opens to reveal photo frame. Timeless jewelry piece.", rating: 4.8, reviews: 72, bgColor: "#ffffff" },
+  { id: "189", productId: "MG-189", name: "Custom Acrylic Photo Keychain", price: 799, image: keychainAcrylicRound, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Clear", hex: "#f5f5f5" }, { name: "Heart Shape", hex: "#ec4899" }, { name: "Star Shape", hex: "#DAA520" }],
+    material: "Crystal-Clear Acrylic, Photo Print", description: "Custom photo keychain in crystal-clear acrylic. Upload any image for printing. Durable and lightweight.", rating: 4.5, reviews: 48, bgColor: "#ffffff" },
+  { id: "190", productId: "MG-190", name: "Gold Vintage Pocket Locket", price: 2999, image: locketVintageGold, category: "lockets-keychains", badge: "Premium",
+    sizes: ["One Size"], colors: [{ name: "Antique Gold", hex: "#B8860B" }, { name: "Brass", hex: "#B5A642" }, { name: "Bronze", hex: "#8B4513" }],
+    material: "Antique Brass, Pocket Watch Style", description: "Vintage pocket-style locket with ornate engraving. Opens like a pocket watch. Heirloom quality piece.", rating: 4.9, reviews: 41, bgColor: "#ffffff" },
+  { id: "191", productId: "MG-191", name: "Crystal Heart Keychain", price: 1399, image: keychainCrystalCube, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Clear", hex: "#f5f5f5" }, { name: "Pink Crystal", hex: "#ec4899" }, { name: "Blue Crystal", hex: "#2563eb" }],
+    material: "K9 Crystal, Heart Shape, LED Base", description: "Heart-shaped crystal keychain with 3D laser photo. Comes with LED light base for display. Romantic gift.", rating: 4.8, reviews: 62, bgColor: "#ffffff" },
+  { id: "192", productId: "MG-192", name: "Resin Art Custom Keychain", price: 1499, image: keychainResinFlower, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Ocean Blue", hex: "#2563eb" }, { name: "Sunset Orange", hex: "#ea580c" }, { name: "Galaxy Purple", hex: "#7c3aed" }],
+    material: "Hand-Poured Epoxy Resin, Custom Art", description: "Handcrafted resin art keychain with custom design. Each piece uniquely made. Available in various color themes.", rating: 4.7, reviews: 57, bgColor: "#ffffff" },
+  { id: "193", productId: "MG-193", name: "Silver Engraved Dog Tag", price: 1099, image: keychainDogtagSteel, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Silver", hex: "#C0C0C0" }, { name: "Black Matte", hex: "#222" }, { name: "Gold", hex: "#DAA520" }],
+    material: "316L Stainless Steel, Deep Engraving", description: "Custom engraved dog tag keychain with deep laser engraving. Your text, name, or coordinates. Military grade steel.", rating: 4.6, reviews: 49, bgColor: "#ffffff" },
+  { id: "194", productId: "MG-194", name: "Infinity Name Locket", price: 2299, image: locketInfinityRosegold, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Rose Gold", hex: "#B76E79" }, { name: "Gold", hex: "#DAA520" }, { name: "Silver", hex: "#C0C0C0" }],
+    material: "Rose Gold Stainless Steel, Name Engraving", description: "Infinity pendant with custom name engraving. Rose gold finish. Symbolizes limitless love and connection.", rating: 4.8, reviews: 81, bgColor: "#ffffff" },
+  { id: "195", productId: "MG-195", name: "Adventure Carabiner Set", price: 1399, image: keychainCarabiner, category: "lockets-keychains",
+    sizes: ["One Size"], colors: [{ name: "Gunmetal", hex: "#3a3a3a" }, { name: "Green", hex: "#16a34a" }, { name: "Orange", hex: "#ea580c" }],
+    material: "Aluminum Alloy, Compass & LED Light", description: "Multi-tool carabiner keychain set with compass and mini LED flashlight. Essential outdoor accessory pack.", rating: 4.7, reviews: 38, bgColor: "#ffffff" },
 ];

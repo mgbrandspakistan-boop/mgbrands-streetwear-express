@@ -8,6 +8,7 @@ import customStamp1 from "@/assets/custom-stamp-1.jpg";
 import walletLeather from "@/assets/wallet-leather.jpg";
 import watchClassic from "@/assets/watch-classic.jpg";
 import shoeSneakers from "@/assets/shoe-sneakers.jpg";
+import locketHeartGold from "@/assets/locket-heart-gold.jpg";
 
 const categories = [
   { name: "Hoodies", image: catHoodies, path: "/hoodies" },
@@ -18,6 +19,7 @@ const categories = [
   { name: "Custom Wallet", image: walletLeather, path: "/custom-wallet-design" },
   { name: "Watches", image: watchClassic, path: "/watches" },
   { name: "Shoes", image: shoeSneakers, path: "/shoes" },
+  { name: "Lockets & Keychains", image: locketHeartGold, path: "/lockets-keychains" },
 ];
 
 const FeaturedCategories = () => {

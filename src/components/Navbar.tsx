@@ -53,6 +53,7 @@ const categoryLabelMap: Record<string, string> = {
   shirts: "Shirt",
   watches: "Watch",
   shoes: "Shoe",
+  "lockets-keychains": "Locket/Keychain",
   "new-arrivals": "New Arrival",
 };
 
@@ -101,6 +102,7 @@ const navLinks = [
   { label: "Custom Wallet", href: "/custom-wallet-design" },
   { label: "Watches", href: "/watches" },
   { label: "Shoes", href: "/shoes" },
+  { label: "Lockets & Keychains", href: "/lockets-keychains" },
   { label: "All Categories", href: "/all-categories" },
 ];
 

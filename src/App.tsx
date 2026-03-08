@@ -19,6 +19,7 @@ import CustomWalletDesign from "./pages/CustomWalletDesign";
 import AllCategories from "./pages/AllCategories";
 import Watches from "./pages/Watches";
 import Shoes from "./pages/Shoes";
+import LocketsKeychains from "./pages/LocketsKeychains";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/custom-wallet-design" element={<CustomWalletDesign />} />
             <Route path="/watches" element={<Watches />} />
             <Route path="/shoes" element={<Shoes />} />
+            <Route path="/lockets-keychains" element={<LocketsKeychains />} />
             <Route path="/all-categories" element={<AllCategories />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
