@@ -92,18 +92,22 @@ const walletItems: SearchItem[] = [
   { id: "wallet-5", productId: "MG-065", name: "Long Wallet", price: 3299, image: walletLong, categoryLabel: "Custom Wallet", navigateTo: "/custom-wallet-design" },
 ];
 
-const navLinks = [
+const mainNavLinks = [
   { label: "Home", href: "/" },
   { label: "Shirts", href: "/shirts" },
   { label: "Hoodies", href: "/hoodies" },
+  { label: "Watches", href: "/watches" },
+  { label: "Shoes", href: "/shoes" },
+  { label: "Lockets & Keychains", href: "/lockets-keychains" },
+];
+
+const customizationLinks = [
   { label: "Custom T-Shirts", href: "/custom-tshirt-designs" },
   { label: "Custom Mug Print", href: "/custom-mug-print" },
   { label: "Custom Stamps", href: "/custom-stamps" },
   { label: "Custom Wallet", href: "/custom-wallet-design" },
-  { label: "Watches", href: "/watches" },
-  { label: "Shoes", href: "/shoes" },
-  { label: "Lockets & Keychains", href: "/lockets-keychains" },
-  { label: "All Categories", href: "/all-categories" },
+  { label: "Photo Keychains", href: "/lockets-keychains" },
+  { label: "Photo Lockets", href: "/lockets-keychains" },
 ];
 
 const Navbar = () => {
@@ -177,17 +181,25 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(0,0%,12%)]/95 backdrop-blur-xl border-b border-[hsl(0,0%,20%)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          {/* Hamburger Menu Button */}
-          <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-200 hover:text-primary transition-colors p-1" aria-label="Open menu">
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-
-          {/* Logo - centered */}
-          <Link to="/" className="flex items-center absolute left-1/2 -translate-x-1/2">
+          {/* Left - Logo */}
+          <Link to="/" className="flex-shrink-0">
             <img src={logo} alt="MG Brands Pakistan" className="h-10" />
           </Link>
 
-          {/* Right icons */}
+          {/* Center - Main Nav Links (desktop only) */}
+          <div className="hidden lg:flex items-center gap-1">
+            {mainNavLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-primary transition-colors rounded-sm whitespace-nowrap"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right - Search, Cart, Hamburger */}
           <div className="flex items-center gap-3">
             <button onClick={() => { setSearchOpen(!searchOpen); setSearchQuery(""); setSearchResults(null); }} className="text-gray-200 hover:text-primary transition-colors">
               <Search size={20} />
@@ -199,6 +211,9 @@ const Navbar = () => {
                   {totalItems}
                 </span>
               )}
+            </button>
+            <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-200 hover:text-primary transition-colors p-1" aria-label="Open customization menu">
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -254,11 +269,10 @@ const Navbar = () => {
         </AnimatePresence>
       </nav>
 
-      {/* Slide-out Navigation Menu */}
+      {/* Slide-out Menu from Right */}
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -266,23 +280,44 @@ const Navbar = () => {
               className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
               onClick={() => setMenuOpen(false)}
             />
-            {/* Slide Panel */}
             <motion.div
-              initial={{ x: "-100%" }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
+              exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed top-0 left-0 bottom-0 z-50 w-72 sm:w-80 bg-[hsl(0,0%,10%)] border-r border-[hsl(0,0%,20%)] overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 z-50 w-72 sm:w-80 bg-[hsl(0,0%,10%)] border-l border-[hsl(0,0%,20%)] overflow-y-auto"
             >
               <div className="p-6 pt-8">
                 <div className="flex items-center justify-between mb-8">
-                  <img src={logo} alt="MG Brands Pakistan" className="h-8" />
+                  <span className="text-lg font-bold text-white">Menu</span>
                   <button onClick={() => setMenuOpen(false)} className="text-gray-400 hover:text-white transition-colors">
                     <X size={22} />
                   </button>
                 </div>
+
+                {/* Mobile-only: Main category links */}
+                <div className="lg:hidden mb-4">
+                  <p className="text-xs uppercase tracking-wider text-gray-500 mb-3 px-3">Categories</p>
+                  <nav className="flex flex-col gap-1">
+                    {mainNavLinks.map((link) => (
+                      <Link
+                        key={link.label}
+                        to={link.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="flex items-center justify-between py-3 px-3 text-base font-medium text-gray-300 hover:text-primary hover:bg-white/5 rounded-sm transition-all duration-200 group"
+                      >
+                        <span>{link.label}</span>
+                        <ChevronRight size={16} className="text-gray-600 group-hover:text-primary transition-colors" />
+                      </Link>
+                    ))}
+                  </nav>
+                  <div className="border-t border-[hsl(0,0%,20%)] my-4" />
+                </div>
+
+                {/* Customization links */}
+                <p className="text-xs uppercase tracking-wider text-gray-500 mb-3 px-3">Customization</p>
                 <nav className="flex flex-col gap-1">
-                  {navLinks.map((link) => (
+                  {customizationLinks.map((link) => (
                     <Link
                       key={link.label}
                       to={link.href}
@@ -294,6 +329,16 @@ const Navbar = () => {
                     </Link>
                   ))}
                 </nav>
+
+                <div className="border-t border-[hsl(0,0%,20%)] my-4" />
+                <Link
+                  to="/all-categories"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center justify-between py-3 px-3 text-base font-medium text-gray-300 hover:text-primary hover:bg-white/5 rounded-sm transition-all duration-200 group"
+                >
+                  <span>All Categories</span>
+                  <ChevronRight size={16} className="text-gray-600 group-hover:text-primary transition-colors" />
+                </Link>
               </div>
             </motion.div>
           </>
