@@ -724,7 +724,7 @@ export const products: Product[] = [
     rating: 4.8, reviews: 92,
   },
   {
-    id: "99", productId: "MG-099", name: "Sneakers 04", price: 3499, image: shoeRunning, category: "shoes",
+    id: "99", productId: "MG-099", name: "Sneakers 04", price: 3499, image: shoeRetroRunner, category: "shoes",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "White/Blue", hex: "#f5f5f5" }, { name: "Black/Red", hex: "#222" }, { name: "Grey/Green", hex: "#999" }],
     material: "Synthetic Leather Upper, Phylon Midsole — Rubber Outsole",
     description: "Clean minimal sneakers with synthetic leather for easy maintenance. Lightweight phylon midsole for cushioning.",
