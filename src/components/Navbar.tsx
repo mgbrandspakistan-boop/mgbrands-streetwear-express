@@ -1,4 +1,4 @@
-import { ShoppingBag, Menu, X, Search } from "lucide-react";
+import { ShoppingBag, Menu, X, Search, ChevronRight } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useState, useRef, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -40,8 +40,8 @@ interface SearchItem {
   price: number;
   image: string;
   categoryLabel: string;
-  navigateTo?: string; // if set, navigate instead of QuickView
-  product?: Product;   // if set, open QuickView
+  navigateTo?: string;
+  product?: Product;
 }
 
 const categoryLabelMap: Record<string, string> = {
@@ -57,7 +57,6 @@ const categoryLabelMap: Record<string, string> = {
   "new-arrivals": "New Arrival",
 };
 
-// Build unified search index
 const customTShirtDesigns: SearchItem[] = [
   { id: "ct-1", productId: "MG-043", name: "Urban Graffiti Custom T-Shirt", price: 1899, image: customDesign1, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
   { id: "ct-2", productId: "MG-044", name: "Midnight Abstract Custom T-Shirt", price: 1999, image: customDesign2, categoryLabel: "Custom T-Shirt", navigateTo: "/custom-tshirt-designs" },
@@ -96,6 +95,7 @@ const walletItems: SearchItem[] = [
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Shirts", href: "/shirts" },
+  { label: "Hoodies", href: "/hoodies" },
   { label: "Custom T-Shirts", href: "/custom-tshirt-designs" },
   { label: "Custom Mug Print", href: "/custom-mug-print" },
   { label: "Custom Stamps", href: "/custom-stamps" },
@@ -108,7 +108,7 @@ const navLinks = [
 
 const Navbar = () => {
   const { totalItems, setIsCartOpen } = useCart();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<SearchItem[] | "not-found" | null>(null);
@@ -116,7 +116,6 @@ const Navbar = () => {
   const searchRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  // Build full search index once
   const allSearchItems = useMemo<SearchItem[]>(() => {
     const mainProducts: SearchItem[] = products.map((p) => ({
       id: p.id,
@@ -133,6 +132,16 @@ const Navbar = () => {
   useEffect(() => {
     if (searchOpen && searchRef.current) searchRef.current.focus();
   }, [searchOpen]);
+
+  // Close menu on route change
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   const handleSearch = () => {
     const q = searchQuery.trim().toLowerCase();
@@ -168,18 +177,17 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(0,0%,12%)]/95 backdrop-blur-xl border-b border-[hsl(0,0%,20%)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center">
+          {/* Hamburger Menu Button */}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-200 hover:text-primary transition-colors p-1" aria-label="Open menu">
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Logo - centered */}
+          <Link to="/" className="flex items-center absolute left-1/2 -translate-x-1/2">
             <img src={logo} alt="MG Brands Pakistan" className="h-10" />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-5">
-            {navLinks.map((link) => (
-              <Link key={link.label} to={link.href} className="text-xs font-medium text-gray-300 hover:text-primary transition-colors duration-300 whitespace-nowrap">
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
+          {/* Right icons */}
           <div className="flex items-center gap-3">
             <button onClick={() => { setSearchOpen(!searchOpen); setSearchQuery(""); setSearchResults(null); }} className="text-gray-200 hover:text-primary transition-colors">
               <Search size={20} />
@@ -191,9 +199,6 @@ const Navbar = () => {
                   {totalItems}
                 </span>
               )}
-            </button>
-            <button className="lg:hidden text-gray-200" onClick={() => setMobileOpen(!mobileOpen)}>
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -247,27 +252,53 @@ const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
+      </nav>
 
-        {/* Mobile Nav */}
-        <AnimatePresence>
-          {mobileOpen && (
+      {/* Slide-out Navigation Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            {/* Backdrop */}
             <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden bg-[hsl(0,0%,12%)] border-b border-[hsl(0,0%,20%)] overflow-hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+              onClick={() => setMenuOpen(false)}
+            />
+            {/* Slide Panel */}
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed top-0 left-0 bottom-0 z-50 w-72 sm:w-80 bg-[hsl(0,0%,10%)] border-r border-[hsl(0,0%,20%)] overflow-y-auto"
             >
-              <div className="px-4 py-4 flex flex-col gap-3">
-                {navLinks.map((link) => (
-                  <Link key={link.label} to={link.href} onClick={() => setMobileOpen(false)} className="text-base font-medium text-gray-300 hover:text-primary transition-colors">
-                    {link.label}
-                  </Link>
-                ))}
+              <div className="p-6 pt-8">
+                <div className="flex items-center justify-between mb-8">
+                  <img src={logo} alt="MG Brands Pakistan" className="h-8" />
+                  <button onClick={() => setMenuOpen(false)} className="text-gray-400 hover:text-white transition-colors">
+                    <X size={22} />
+                  </button>
+                </div>
+                <nav className="flex flex-col gap-1">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="flex items-center justify-between py-3 px-3 text-base font-medium text-gray-300 hover:text-primary hover:bg-white/5 rounded-sm transition-all duration-200 group"
+                    >
+                      <span>{link.label}</span>
+                      <ChevronRight size={16} className="text-gray-600 group-hover:text-primary transition-colors" />
+                    </Link>
+                  ))}
+                </nav>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+          </>
+        )}
+      </AnimatePresence>
 
       <QuickViewModal product={quickViewProduct} open={!!quickViewProduct} onClose={() => setQuickViewProduct(null)} />
     </>

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ProductCustomizer from "@/components/ProductCustomizer";
 import stampSelfInk from "@/assets/stamp-self-ink.jpg";
 import stampWooden from "@/assets/stamp-wooden.jpg";
 import stampPocket from "@/assets/stamp-pocket.jpg";
@@ -95,6 +96,19 @@ const CustomStamps = () => {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Design Editor */}
+          <div className="mb-10">
+            <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold">★</span>
+              Design Editor — Drag, Zoom &amp; Rotate Preview
+            </h2>
+            <ProductCustomizer
+              productType="stamp"
+              baseImage={selectedStamp.image}
+              productName={selectedStamp.name}
+            />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

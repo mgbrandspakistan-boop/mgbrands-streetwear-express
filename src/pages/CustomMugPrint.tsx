@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ProductCustomizer from "@/components/ProductCustomizer";
 import mugClassicWhite from "@/assets/mug-classic-white.jpg";
 import mugBlack from "@/assets/mug-black.jpg";
 import mugMagic from "@/assets/mug-magic.jpg";
@@ -88,12 +89,25 @@ const CustomMugPrint = () => {
             </div>
           </div>
 
+          {/* Design Editor */}
+          <div className="mb-10">
+            <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold">★</span>
+              Design Editor — Drag, Zoom & Rotate Preview
+            </h2>
+            <ProductCustomizer
+              productType="mug"
+              baseImage={selectedMug.image}
+              productName={selectedMug.name}
+            />
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left: Preview */}
             <div>
               <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-                <span className="bg-primary text-primary-foreground w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold">★</span>
-                Preview
+                <span className="bg-primary text-primary-foreground w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                Quick Preview
               </h2>
               <div className="bg-white border border-border rounded-sm overflow-hidden aspect-square flex items-center justify-center relative">
                 <img src={selectedMug.image} alt={selectedMug.name} className="w-3/4 h-3/4 object-contain" />

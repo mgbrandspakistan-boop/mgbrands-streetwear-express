@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ProductCustomizer from "@/components/ProductCustomizer";
 import walletLeather from "@/assets/wallet-leather.jpg";
 import walletCardHolder from "@/assets/wallet-card-holder.jpg";
 import walletZipper from "@/assets/wallet-zipper.jpg";
@@ -94,6 +95,19 @@ const CustomWalletDesign = () => {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Design Editor */}
+          <div className="mb-10">
+            <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold">★</span>
+              Design Editor — Drag, Zoom &amp; Rotate Preview
+            </h2>
+            <ProductCustomizer
+              productType="wallet"
+              baseImage={selectedWallet.image}
+              productName={selectedWallet.name}
+            />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
