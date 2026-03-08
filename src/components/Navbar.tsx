@@ -53,6 +53,7 @@ const categoryLabelMap: Record<string, string> = {
   shirts: "Shirt",
   watches: "Watch",
   shoes: "Shoe",
+  "lockets-keychains": "Locket/Keychain",
   "new-arrivals": "New Arrival",
 };
 
