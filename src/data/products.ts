@@ -738,7 +738,7 @@ export const products: Product[] = [
     rating: 4.9, reviews: 43,
   },
   {
-    id: "101", productId: "MG-101", name: "Sports Shoes 01", price: 3999, image: shoeSports, category: "shoes",
+    id: "101", productId: "MG-101", name: "Sports Shoes 01", price: 3999, image: shoeDerbyTan, category: "shoes",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black/Neon", hex: "#222" }, { name: "Blue/White", hex: "#1a1a3e" }, { name: "Red/Black", hex: "#8b3a1a" }],
     material: "Breathable Mesh Upper, Gel Cushion Midsole — Rubber Outsole",
     description: "High-energy sports shoes with gel cushioning for impact absorption. Breathable mesh keeps feet cool during workouts.",
