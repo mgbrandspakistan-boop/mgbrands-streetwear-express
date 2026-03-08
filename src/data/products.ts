@@ -710,7 +710,7 @@ export const products: Product[] = [
     rating: 4.6, reviews: 78,
   },
   {
-    id: "97", productId: "MG-097", name: "Sneakers 02", price: 3899, image: shoeCasual, category: "shoes",
+    id: "97", productId: "MG-097", name: "Sneakers 02", price: 3899, image: shoeSlipOnGrey, category: "shoes",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Off White", hex: "#eee" }, { name: "Navy", hex: "#1a1a3e" }, { name: "Olive", hex: "#556B2F" }],
     material: "Suede & Mesh Upper, EVA Midsole — Rubber Outsole",
     description: "Retro-inspired suede sneakers with mesh panels for breathability. Cushioned EVA midsole for all-day comfort.",
