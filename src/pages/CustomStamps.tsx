@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ProductCustomizer from "@/components/ProductCustomizer";
 import stampSelfInk from "@/assets/stamp-self-ink.jpg";
 import stampWooden from "@/assets/stamp-wooden.jpg";
 import stampPocket from "@/assets/stamp-pocket.jpg";
