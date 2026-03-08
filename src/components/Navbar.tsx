@@ -92,18 +92,22 @@ const walletItems: SearchItem[] = [
   { id: "wallet-5", productId: "MG-065", name: "Long Wallet", price: 3299, image: walletLong, categoryLabel: "Custom Wallet", navigateTo: "/custom-wallet-design" },
 ];
 
-const navLinks = [
+const mainNavLinks = [
   { label: "Home", href: "/" },
   { label: "Shirts", href: "/shirts" },
   { label: "Hoodies", href: "/hoodies" },
+  { label: "Watches", href: "/watches" },
+  { label: "Shoes", href: "/shoes" },
+  { label: "Lockets & Keychains", href: "/lockets-keychains" },
+];
+
+const customizationLinks = [
   { label: "Custom T-Shirts", href: "/custom-tshirt-designs" },
   { label: "Custom Mug Print", href: "/custom-mug-print" },
   { label: "Custom Stamps", href: "/custom-stamps" },
   { label: "Custom Wallet", href: "/custom-wallet-design" },
-  { label: "Watches", href: "/watches" },
-  { label: "Shoes", href: "/shoes" },
-  { label: "Lockets & Keychains", href: "/lockets-keychains" },
-  { label: "All Categories", href: "/all-categories" },
+  { label: "Photo Keychains", href: "/lockets-keychains" },
+  { label: "Photo Lockets", href: "/lockets-keychains" },
 ];
 
 const Navbar = () => {
