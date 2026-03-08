@@ -717,7 +717,7 @@ export const products: Product[] = [
     rating: 4.7, reviews: 65,
   },
   {
-    id: "98", productId: "MG-098", name: "Sneakers 03", price: 4199, image: shoeSports, category: "shoes", badge: "New",
+    id: "98", productId: "MG-098", name: "Sneakers 03", price: 4199, image: shoeChunkyPlatform, category: "shoes", badge: "New",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black/White", hex: "#222" }, { name: "Grey/Neon", hex: "#666" }, { name: "Navy/Red", hex: "#1a1a3e" }],
     material: "Knit Upper, Boost Foam Midsole — Continental Rubber Outsole",
     description: "High-performance knit sneakers with responsive foam cushioning. Sock-like fit for ultimate comfort.",
