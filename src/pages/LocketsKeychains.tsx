@@ -9,13 +9,64 @@ import SiteFooter from "@/components/SiteFooter";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-type SubFilter = "all" | "lockets" | "keychains";
+type SubFilter = "all" | "lockets" | "photo-lockets" | "name-lockets" | "keychains" | "photo-keychains" | "custom-keychains";
 
 const filterLabels: { id: SubFilter; label: string }[] = [
   { id: "all", label: "All Products" },
   { id: "lockets", label: "Lockets" },
+  { id: "photo-lockets", label: "Photo Lockets" },
+  { id: "name-lockets", label: "Name Lockets" },
   { id: "keychains", label: "Keychains" },
+  { id: "photo-keychains", label: "Photo Keychains" },
+  { id: "custom-keychains", label: "Custom Keychains" },
 ];
+
+// Map product IDs to subcategories
+const locketSubCategory: Record<string, SubFilter> = {
+  "MG-156": "photo-lockets",    // Gold Heart Photo Locket
+  "MG-157": "lockets",          // Silver Round Engraved Locket
+  "MG-158": "photo-lockets",    // Rose Gold Oval Locket
+  "MG-159": "lockets",          // Couple Heart Locket Set
+  "MG-160": "name-lockets",     // Silver Name Necklace Locket
+  "MG-161": "lockets",          // Vintage Gold Filigree Locket
+  "MG-162": "photo-lockets",    // Silver Square Photo Locket
+  "MG-163": "lockets",          // Gold Butterfly Locket
+  "MG-164": "lockets",          // Rose Gold Infinity Couple Locket
+  "MG-165": "lockets",          // Silver Star Locket
+  "MG-166": "lockets",          // Gold Tree of Life Locket
+  "MG-167": "lockets",          // Gold Crown Royal Locket
+  "MG-168": "lockets",          // Silver Moon & Stars Locket
+  "MG-169": "lockets",          // Rose Gold Circle Charm Locket
+  "MG-170": "photo-lockets",    // Gold Teardrop Locket
+  "MG-171": "photo-keychains",  // Rectangular Photo Keychain
+  "MG-172": "photo-keychains",  // Heart Photo Keychain
+  "MG-173": "custom-keychains", // Leather Name Keychain
+  "MG-174": "custom-keychains", // Acrylic Custom Keychain
+  "MG-175": "custom-keychains", // Initial Letter Keychain
+  "MG-176": "keychains",        // Couple Puzzle Keychain Set
+  "MG-177": "custom-keychains", // Wooden Engraved Keychain
+  "MG-178": "photo-keychains",  // Crystal 3D Photo Keychain
+  "MG-179": "keychains",        // Resin Flower Keychain
+  "MG-180": "keychains",        // Steel Dog Tag Keychain
+  "MG-181": "keychains",        // Carabiner Compass Keychain
+  "MG-182": "keychains",        // Globe Spinner Keychain
+  "MG-183": "keychains",        // Bottle Opener Keychain
+  "MG-184": "keychains",        // Sports Car Keychain
+  "MG-185": "photo-lockets",    // Photo Locket Heart Mini
+  "MG-186": "photo-lockets",    // Double Photo Locket Round
+  "MG-187": "custom-keychains", // Couple Name Keychain Set
+  "MG-188": "photo-lockets",    // Photo Oval Rosegold Locket
+  "MG-189": "custom-keychains", // Custom Acrylic Photo Keychain
+  "MG-190": "lockets",          // Gold Vintage Pocket Locket
+  "MG-191": "photo-keychains",  // Crystal Heart Keychain
+  "MG-192": "custom-keychains", // Resin Art Custom Keychain
+  "MG-193": "keychains",        // Silver Engraved Dog Tag
+  "MG-194": "name-lockets",     // Infinity Name Locket
+  "MG-195": "keychains",        // Adventure Carabiner Set
+};
+
+const isLocketType = (sub: SubFilter) => sub === "lockets" || sub === "photo-lockets" || sub === "name-lockets";
+const isKeychainType = (sub: SubFilter) => sub === "keychains" || sub === "photo-keychains" || sub === "custom-keychains";
 
 const LocketsKeychains = () => {
   const { addItem } = useCart();
@@ -26,9 +77,12 @@ const LocketsKeychains = () => {
 
   const filtered = allProducts.filter((p) => {
     if (filter === "all") return true;
-    if (filter === "lockets") return p.name.toLowerCase().includes("locket") || p.name.toLowerCase().includes("necklace") || p.name.toLowerCase().includes("pendant");
-    if (filter === "keychains") return p.name.toLowerCase().includes("keychain") || p.name.toLowerCase().includes("key chain") || p.name.toLowerCase().includes("dog tag") || p.name.toLowerCase().includes("carabiner");
-    return true;
+    const sub = locketSubCategory[p.productId];
+    if (!sub) return false;
+    // "lockets" shows all locket types, "keychains" shows all keychain types
+    if (filter === "lockets") return isLocketType(sub);
+    if (filter === "keychains") return isKeychainType(sub);
+    return sub === filter;
   });
 
   return (
