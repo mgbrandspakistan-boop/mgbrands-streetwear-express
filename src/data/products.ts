@@ -731,7 +731,7 @@ export const products: Product[] = [
     rating: 4.5, reviews: 54,
   },
   {
-    id: "100", productId: "MG-100", name: "Sneakers 05", price: 4499, image: shoeFormal, category: "shoes", badge: "Premium",
+    id: "100", productId: "MG-100", name: "Sneakers 05", price: 4499, image: shoeTrailOlive, category: "shoes", badge: "Premium",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black", hex: "#222" }, { name: "Brown", hex: "#8B4513" }, { name: "White", hex: "#f5f5f5" }],
     material: "Full Grain Leather Upper, Leather Midsole — Rubber Outsole",
     description: "Luxury leather sneakers with premium full-grain construction. Elevated streetwear meets sophistication.",
