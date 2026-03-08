@@ -759,7 +759,7 @@ export const products: Product[] = [
     rating: 4.6, reviews: 67,
   },
   {
-    id: "104", productId: "MG-104", name: "Sports Shoes 04", price: 4599, image: shoeSports, category: "shoes", badge: "Best Seller",
+    id: "104", productId: "MG-104", name: "Sports Shoes 04", price: 4599, image: shoeSockBlack, category: "shoes", badge: "Best Seller",
     sizes: ["39", "40", "41", "42", "43", "44"], colors: [{ name: "Black", hex: "#222" }, { name: "Grey", hex: "#666" }, { name: "Navy", hex: "#1a1a3e" }],
     material: "Carbon Fiber Plate, Zoom Foam — Engineered Mesh Upper",
     description: "Race-day performance shoes with carbon fiber plate for energy return. Elite-level construction for competitive athletes.",
