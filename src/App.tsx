@@ -19,6 +19,7 @@ import CustomWalletDesign from "./pages/CustomWalletDesign";
 import AllCategories from "./pages/AllCategories";
 import Watches from "./pages/Watches";
 import Shoes from "./pages/Shoes";
+import LocketsKeychains from "./pages/LocketsKeychains";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
