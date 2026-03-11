@@ -206,6 +206,9 @@ const Navbar = () => {
             <button onClick={() => { setSearchOpen(!searchOpen); setSearchQuery(""); setSearchResults(null); }} className="text-gray-200 hover:text-primary transition-colors">
               <Search size={20} />
             </button>
+            <Link to={user ? "/dashboard" : "/auth"} className="text-gray-200 hover:text-primary transition-colors">
+              <UserCircle size={22} />
+            </Link>
             <button onClick={() => setIsCartOpen(true)} className="relative text-gray-200 hover:text-primary transition-colors">
               <ShoppingBag size={22} />
               {totalItems > 0 && (

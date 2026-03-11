@@ -1,6 +1,8 @@
 import { useCart } from "@/context/CartContext";
-import { useState } from "react";
+import { useAuth } from "@/context/AuthContext";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import { ArrowLeft, CheckCircle, CreditCard } from "lucide-react";
 
 const paymentAccounts = {
@@ -14,10 +16,25 @@ type PaymentMethod = "cod" | "bank" | "easypaisa" | "jazzcash" | "payoneer";
 
 const Checkout = () => {
   const { items, totalPrice, clearCart } = useCart();
+  const { user, profile } = useAuth();
   const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", city: "", address: "" });
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("cod");
+
+  const deliveryCharge = 200;
+
+  // Auto-fill form with saved profile data
+  useEffect(() => {
+    if (profile) {
+      setForm({
+        name: profile.full_name || "",
+        phone: profile.phone || "",
+        city: profile.city || "",
+        address: profile.shipping_address || "",
+      });
+    }
+  }, [profile]);
 
   const deliveryCharge = 200;
 
