@@ -37,7 +37,7 @@ const Checkout = () => {
   }, [profile]);
 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const orderLines = items.map(
       (item) => `• ${item.productId} — ${item.name} × ${item.quantity} = PKR ${(item.price * item.quantity).toLocaleString()}`
@@ -59,6 +59,35 @@ const Checkout = () => {
       ``,
       `*Payment:* ${paymentMethod === "cod" ? "Cash on Delivery" : paymentAccounts[paymentMethod as keyof typeof paymentAccounts].label}`,
     ].join("\n");
+
+    // Save order to database if user is logged in
+    if (user) {
+      const paymentLabel = paymentMethod === "cod" ? "Cash on Delivery" : paymentAccounts[paymentMethod as keyof typeof paymentAccounts].label;
+      const { data: orderData } = await supabase.from("orders").insert({
+        user_id: user.id,
+        status: "pending",
+        payment_method: paymentLabel,
+        total_price: totalPrice,
+        delivery_charges: deliveryCharge,
+        customer_name: form.name,
+        customer_phone: form.phone,
+        customer_city: form.city,
+        customer_address: form.address,
+      }).select().single();
+
+      if (orderData) {
+        await supabase.from("order_items").insert(
+          items.map((item) => ({
+            order_id: orderData.id,
+            product_id: item.productId,
+            product_name: item.name,
+            quantity: item.quantity,
+            price: item.price,
+            image_url: item.image || null,
+          }))
+        );
+      }
+    }
 
     window.open(`https://wa.me/923271497570?text=${encodeURIComponent(message)}`, "_blank");
     setSubmitted(true);
