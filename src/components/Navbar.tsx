@@ -1,5 +1,6 @@
-import { ShoppingBag, Menu, X, Search, ChevronRight } from "lucide-react";
+import { ShoppingBag, Menu, X, Search, ChevronRight, UserCircle } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import { useState, useRef, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
